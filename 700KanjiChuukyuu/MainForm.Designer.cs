@@ -31,14 +31,14 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAdd = new System.Windows.Forms.ToolStripMenuItem();
-            this.sửaTừToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuEditWord = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuAddPhrase = new System.Windows.Forms.ToolStripMenuItem();
             this.modeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.traTừToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.choTừNgẫuNhiênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listWord = new System.Windows.Forms.ListBox();
             this.txtKanji = new System.Windows.Forms.TextBox();
             this.txtTemp = new System.Windows.Forms.TextBox();
-            this.menuAddPhrase = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,7 +57,7 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuAdd,
-            this.sửaTừToolStripMenuItem,
+            this.menuEditWord,
             this.menuAddPhrase});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
@@ -70,11 +70,19 @@
             this.menuAdd.Text = "Thêm từ";
             this.menuAdd.Click += new System.EventHandler(this.menuAdd_Click);
             // 
-            // sửaTừToolStripMenuItem
+            // menuEditWord
             // 
-            this.sửaTừToolStripMenuItem.Name = "sửaTừToolStripMenuItem";
-            this.sửaTừToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.sửaTừToolStripMenuItem.Text = "Sửa từ";
+            this.menuEditWord.Name = "menuEditWord";
+            this.menuEditWord.Size = new System.Drawing.Size(152, 22);
+            this.menuEditWord.Text = "Sửa từ";
+            this.menuEditWord.Click += new System.EventHandler(this.menuEditWord_Click);
+            // 
+            // menuAddPhrase
+            // 
+            this.menuAddPhrase.Name = "menuAddPhrase";
+            this.menuAddPhrase.Size = new System.Drawing.Size(152, 22);
+            this.menuAddPhrase.Text = "Thêm cụm từ";
+            this.menuAddPhrase.Click += new System.EventHandler(this.menuAddPhrase_Click);
             // 
             // modeToolStripMenuItem
             // 
@@ -122,13 +130,6 @@
             this.txtTemp.Size = new System.Drawing.Size(507, 20);
             this.txtTemp.TabIndex = 3;
             // 
-            // menuAddPhrase
-            // 
-            this.menuAddPhrase.Name = "menuAddPhrase";
-            this.menuAddPhrase.Size = new System.Drawing.Size(152, 22);
-            this.menuAddPhrase.Text = "Thêm cụm từ";
-            this.menuAddPhrase.Click += new System.EventHandler(this.menuAddPhrase_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -158,7 +159,7 @@
         private System.Windows.Forms.ListBox listWord;
         private System.Windows.Forms.TextBox txtKanji;
         private System.Windows.Forms.ToolStripMenuItem menuAdd;
-        private System.Windows.Forms.ToolStripMenuItem sửaTừToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menuEditWord;
         private System.Windows.Forms.TextBox txtTemp;
         private System.Windows.Forms.ToolStripMenuItem menuAddPhrase;
     }

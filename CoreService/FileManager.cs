@@ -43,6 +43,8 @@ namespace CoreService
                 FileStream stream = new FileStream(Config.WORD_FILE_PATH, FileMode.OpenOrCreate, FileAccess.Write);
                 BinaryFormatter formatter = new BinaryFormatter();
                 formatter.Serialize(stream, DataManager.WordList);
+                stream.Dispose();
+                stream.Close();
             }
             catch (Exception e)
             {
@@ -58,6 +60,8 @@ namespace CoreService
                 FileStream stream = new FileStream(Config.PHRASE_FILE_PATH, FileMode.OpenOrCreate, FileAccess.Write);
                 BinaryFormatter formatter = new BinaryFormatter();
                 formatter.Serialize(stream, DataManager.Phrases);
+                stream.Dispose();
+                stream.Close();
             }
             catch (Exception e)
             {
@@ -75,6 +79,8 @@ namespace CoreService
                 {
                     BinaryFormatter formatter = new BinaryFormatter();
                     DataManager.Phrases = (List<Phrase>)formatter.Deserialize(stream);
+                    stream.Dispose();
+                    stream.Close();
                     return null;
                 }
                 return "File không có dữ liệu";

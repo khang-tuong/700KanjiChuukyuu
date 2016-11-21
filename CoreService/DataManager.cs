@@ -15,5 +15,19 @@ namespace CoreService
         public DataManager()
         {
         }
+
+        public static void UpdateWordList(Word w)
+        {
+            int length = WordList.Count;
+            for (int i = 0; i < length; i++)
+            {
+                if (WordList[i].Kanji == w.Kanji)
+                {
+                    WordList[i] = w;
+                    break;
+                }
+            }
+            FileManager.WriteWordFile();
+        }
     }
 }

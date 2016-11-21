@@ -28,5 +28,25 @@ namespace CoreService.Model
             this.Kunyomi.Add(kunyomi);
             this.HanViet = hanviet;
         }
+
+        public string GetKunyomi()
+        {
+            string s = "";
+            foreach (string item in Kunyomi)
+            {
+                s += item + ", "; 
+            }
+            return s.Substring(0, s.Length - 2);
+        }
+
+        public string GetOnyomi()
+        {
+            string s = "";
+            foreach (string item in Onyomi)
+            {
+                s += item + ", ";
+            }
+            return s.Substring(0, s.Length - 2);
+        }
     }
 }

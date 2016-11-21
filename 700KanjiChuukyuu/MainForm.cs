@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CoreService;
+using CoreService.Model;
 
 namespace _700KanjiChuukyuu
 {
@@ -60,13 +61,28 @@ namespace _700KanjiChuukyuu
         private void listWord_Click(object sender, EventArgs e)
         {
             char c = ((string) this.listWord.SelectedItem)[0];
-            string t = DataManager.Phrases.Where(q => q.LinkedWord.Contains(c)).ToList()[0].Word;
-            this.txtTemp.Text = t;
+            List<Phrase> phrases = DataManager.Phrases.Where(q => q.LinkedWord.Contains(c)).ToList();
+            string t = "";
+            if (phrases != null && phrases.Count > 0)
+            {
+                foreach (var item in phrases)
+                {
+                    t += item.Word + ", ";
+                }
+            }
+            this.txtTemp.Text = t.Substring(0, t.Length > 2 ? t.Length - 2 : 0);
         }
 
         private void menuAddPhrase_Click(object sender, EventArgs e)
         {
             AddPhraseForm f = new AddPhraseForm();
+            f.Show();
+        }
+
+        private void menuEditWord_Click(object sender, EventArgs e)
+        {
+            char c = ((string)this.listWord.SelectedItem)[0];
+            EditWordForm f = new EditWordForm(DataManager.WordList.SingleOrDefault(q => q.Kanji == c.ToString()));
             f.Show();
         }
     }
