@@ -10,6 +10,7 @@ namespace CoreService
     public class DataManager
     {
         public static List<Word> WordList = new List<Word>();
+        public static List<Phrase> Phrases = new List<Phrase>();
 
         public DataManager()
         {

@@ -39,15 +39,34 @@ namespace _700KanjiChuukyuu
             {
                 MessageBox.Show(r, "Có lỗi xảy ra");
             }
+            r = FileManager.ReadPhraseFile();
+            if (!string.IsNullOrEmpty(r))
+            {
+                MessageBox.Show(r, "Có lỗi xảy ra");
+            }
             foreach (var item in DataManager.WordList)
             {
-                this.listWord.Items.Add(item.Kanji + '\n' + item.Kunyomi[0]);
+                this.listWord.Font = new Font("MS Mincho", 14);
+                this.listWord.Items.Add(item.Kanji + " - " + item.HanViet);
             }
         }
 
         private void menuAdd_Click(object sender, EventArgs e)
         {
-            AddForm f = new AddForm();
+            AddWordForm f = new AddWordForm();
+            f.Show();
+        }
+
+        private void listWord_Click(object sender, EventArgs e)
+        {
+            char c = ((string) this.listWord.SelectedItem)[0];
+            string t = DataManager.Phrases.Where(q => q.LinkedWord.Contains(c)).ToList()[0].Word;
+            this.txtTemp.Text = t;
+        }
+
+        private void menuAddPhrase_Click(object sender, EventArgs e)
+        {
+            AddPhraseForm f = new AddPhraseForm();
             f.Show();
         }
     }

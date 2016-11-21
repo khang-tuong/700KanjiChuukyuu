@@ -43,7 +43,7 @@
     <Compile Include="Config.cs" />
     <Compile Include="DataManager.cs" />
     <Compile Include="FileManager.cs" />
-    <Compile Include="Model\MultiWord.cs" />
+    <Compile Include="Model\Phrase.cs" />
     <Compile Include="Model\Sentence.cs" />
     <Compile Include="Model\Word.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
