@@ -51,6 +51,12 @@
     <Compile Include="AddPhraseForm.Designer.cs">
       <DependentUpon>AddPhraseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddSentenceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddSentenceForm.Designer.cs">
+      <DependentUpon>AddSentenceForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddWordForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +79,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AddPhraseForm.resx">
       <DependentUpon>AddPhraseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddSentenceForm.resx">
+      <DependentUpon>AddSentenceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddWordForm.resx">
       <DependentUpon>AddWordForm.cs</DependentUpon>

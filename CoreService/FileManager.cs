@@ -94,5 +94,47 @@ namespace CoreService
                 return "File bị hỏng format!";
             }
         }
+
+        public static string ReadSentenceFile()
+        {
+            try
+            {
+                FileStream stream = new FileStream(Config.SENTENCE_FILE_PATH, FileMode.Open, FileAccess.Read);
+                if (stream.Length != 0)
+                {
+                    BinaryFormatter formatter = new BinaryFormatter();
+                    DataManager.Sentences = (List<Sentence>)formatter.Deserialize(stream);
+                    stream.Dispose();
+                    stream.Close();
+                    return null;
+                }
+                return "File không có dữ liệu";
+            }
+            catch (FileNotFoundException)
+            {
+                return "Không tìm thấy sentence.dat";
+            }
+            catch (System.Runtime.Serialization.SerializationException)
+            {
+                return "File bị hỏng format!";
+            }
+        }
+
+        public static void WriteSentenceFile()
+        {
+            try
+            {
+                FileStream stream = new FileStream(Config.SENTENCE_FILE_PATH, FileMode.OpenOrCreate, FileAccess.Write);
+                BinaryFormatter formatter = new BinaryFormatter();
+                formatter.Serialize(stream, DataManager.Sentences);
+                stream.Dispose();
+                stream.Close();
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+        }
     }
 }
