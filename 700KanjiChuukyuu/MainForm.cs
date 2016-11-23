@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CoreService;
 using CoreService.Model;
+using _700KanjiChuukyuu.Controls;
 
 namespace _700KanjiChuukyuu
 {
@@ -23,15 +24,6 @@ namespace _700KanjiChuukyuu
             LoadData();
         }
 
-        private void txtKanji_TextChanged(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(this.txtKanji.Text))
-            {
-                Size size = TextRenderer.MeasureText(this.txtKanji.Text, this.txtKanji.Font);
-                this.txtKanji.Width = size.Width;
-                this.txtKanji.Left = (this.Width - this.listWord.Width - this.txtKanji.Width) / 2 + this.listWord.Width;
-            }
-        }
 
         private void LoadData()
         {
@@ -73,27 +65,22 @@ namespace _700KanjiChuukyuu
 
         private void listWord_Click(object sender, EventArgs e)
         {
-            char c = ((string) this.listWord.SelectedItem)[0];
-            List<Phrase> phrases = DataManager.Phrases.Where(q => q.LinkedWord.Contains(c)).ToList();
-            string t = "";
-            if (phrases != null && phrases.Count > 0)
+            string c = ((string) this.listWord.SelectedItem).Split(' ').ToList()[0];
+            Word w = DataManager.WordList.SingleOrDefault(q => q.Kanji == c);
+            if (w != null)
             {
-                foreach (var item in phrases)
+                ShowWordForm f = new ShowWordForm(w);
+                f.Location = new Point(0, 0);
+                this.panelDetail.Controls.Clear();
+                this.panelDetail.Controls.Add(f);
+            } else
+            {
+                Phrase p = DataManager.Phrases.SingleOrDefault(q => q.Word == c);
+                if (p != null)
                 {
-                    t += item.Word + ", ";
-                    //List<Sentence> sentences = DataManager.GetSentencesContainPhrase()
+
                 }
             }
-            this.txtTemp.Text = t.Substring(0, t.Length > 2 ? t.Length - 2 : 0);
-            t = "";
-            //if (sentences != null && sentences.Count > 0)
-            //{
-            //    foreach (var item in sentences)
-            //    {
-            //        t += item.Words + ", ";
-            //    }
-            //}
-            this.txtSentence.Text = t.Substring(0, t.Length > 2 ? t.Length - 2 : 0);
         }
 
         private void menuAddPhrase_Click(object sender, EventArgs e)
@@ -119,6 +106,11 @@ namespace _700KanjiChuukyuu
         {
             List<string> data = DataManager.SearchWordAndPhrase(this.txtSearch.Text);
             this.ReloadListBox(data);
+        }
+
+        private void menuRefresh_Click(object sender, EventArgs e)
+        {
+            LoadData();
         }
     }
 }

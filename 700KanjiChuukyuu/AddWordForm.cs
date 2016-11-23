@@ -22,10 +22,6 @@ namespace _700KanjiChuukyuu
 
         private void InitializePlaceholder()
         {
-            Font f = new Font("MS Sans Serif", 11, FontStyle.Italic);
-            this.txtHanViet.Font = this.txtKanji.Font = this.txtKunyomi.Font = this.txtMeaning.Font = this.txtOnyomi.Font = f;
-            this.txtHanViet.ForeColor = Color.Gray;
-            this.txtHanViet.Text = "Tiếng Hán Việt";
         }
 
         private void btnDone_Click(object sender, EventArgs e)
@@ -34,14 +30,27 @@ namespace _700KanjiChuukyuu
             if (DataManager.WordList.SingleOrDefault(q => q.Kanji == kanji) == null)
             {
                 string hanviet = this.txtHanViet.Text;
-                string kunyomi = this.txtKunyomi.Text;
-                string onyomi = this.txtOnyomi.Text;
+                List<string> kunyomi = this.txtKunyomi.Text.Replace('、', ',').Split(',').ToList();
+                List<string> onyomi = this.txtOnyomi.Text.Replace('、', ',').Split(',').ToList();
                 string meaning = this.txtMeaning.Text;
                 Word w = new Word(kanji, meaning, onyomi, kunyomi, hanviet);
                 DataManager.WordList.Add(w);
                 FileManager.WriteWordFile();
+                Reset();
+            } else
+            {
+                MessageBox.Show("Từ này có rồi!");
             }
 
+        }
+
+        private void Reset()
+        {
+            this.txtHanViet.Text = "";
+            this.txtKanji.Text = "";
+            this.txtKunyomi.Text = "";
+            this.txtMeaning.Text = "";
+            this.txtOnyomi.Text = "";
         }
     }
 }

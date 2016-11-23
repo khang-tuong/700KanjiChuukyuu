@@ -55,11 +55,11 @@ namespace CoreService
             List<string> temp = new List<string>();
             foreach (var item in WordList)
             {
-                temp.Add(item.Kanji + " - " + item.HanViet);
+                temp.Add(item.Kanji);
             }
             foreach (var item in Phrases)
             {
-                temp.Add("   " + item.Word);
+                temp.Add(item.Word);
             }
             return temp.OrderBy(q => q.Trim()).ToList();
         }
@@ -82,6 +82,29 @@ namespace CoreService
                 }
             }
             return temp.OrderBy(q => q.Trim()).ToList();
+        }
+
+        public static List<Phrase> GetPhrasesContainWord(Word w)
+        {
+            var r = Phrases.Where(q => q.LinkedWord.Contains(w.Kanji[0])).ToList();
+            return r;
+        }
+
+        public static List<Sentence> GetSentecesContainWord(Word w)
+        {
+            var r = Sentences.Where(q => q.UnderlineWords.Contains(w.Kanji)).ToList();
+            return r;
+        }
+
+        public static List<Sentence> GetSentencesContainsPhrasesList(List<Phrase> phrases)
+        {
+            var r = new List<Sentence>();
+            foreach (var item in phrases)
+            {
+                var temp = Sentences.Where(q => q.UnderlineWords.Contains(item.Word)).ToList();
+                if (temp != null) r.AddRange(temp);
+            }
+            return r;
         }
     }
 }

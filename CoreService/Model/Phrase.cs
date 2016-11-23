@@ -14,5 +14,6 @@ namespace CoreService.Model
         public bool Onyomi { get; set; }
         public string Hiragana { get; set; }
         public List<char> LinkedWord { get; set; }
+        public string Meaning { get; set; }
     }
 }

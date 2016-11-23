@@ -40,10 +40,10 @@
             this.traTừToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.choTừNgẫuNhiênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listWord = new System.Windows.Forms.ListBox();
-            this.txtKanji = new System.Windows.Forms.TextBox();
-            this.txtTemp = new System.Windows.Forms.TextBox();
-            this.txtSentence = new System.Windows.Forms.TextBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
+            this.commandToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuRefresh = new System.Windows.Forms.ToolStripMenuItem();
+            this.panelDetail = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,10 +51,11 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.modeToolStripMenuItem});
+            this.modeToolStripMenuItem,
+            this.commandToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1008, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(982, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -74,38 +75,38 @@
             // menuAdd
             // 
             this.menuAdd.Name = "menuAdd";
-            this.menuAdd.Size = new System.Drawing.Size(152, 22);
+            this.menuAdd.Size = new System.Drawing.Size(146, 22);
             this.menuAdd.Text = "Thêm từ";
             this.menuAdd.Click += new System.EventHandler(this.menuAdd_Click);
             // 
             // menuEditWord
             // 
             this.menuEditWord.Name = "menuEditWord";
-            this.menuEditWord.Size = new System.Drawing.Size(152, 22);
+            this.menuEditWord.Size = new System.Drawing.Size(146, 22);
             this.menuEditWord.Text = "Sửa từ";
             this.menuEditWord.Click += new System.EventHandler(this.menuEditWord_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(143, 6);
             // 
             // menuAddPhrase
             // 
             this.menuAddPhrase.Name = "menuAddPhrase";
-            this.menuAddPhrase.Size = new System.Drawing.Size(152, 22);
+            this.menuAddPhrase.Size = new System.Drawing.Size(146, 22);
             this.menuAddPhrase.Text = "Thêm cụm từ";
             this.menuAddPhrase.Click += new System.EventHandler(this.menuAddPhrase_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(143, 6);
             // 
             // menuAddSentence
             // 
             this.menuAddSentence.Name = "menuAddSentence";
-            this.menuAddSentence.Size = new System.Drawing.Size(152, 22);
+            this.menuAddSentence.Size = new System.Drawing.Size(146, 22);
             this.menuAddSentence.Text = "Thêm câu";
             this.menuAddSentence.Click += new System.EventHandler(this.menuAddSentence_Click);
             // 
@@ -139,29 +140,6 @@
             this.listWord.TabIndex = 1;
             this.listWord.Click += new System.EventHandler(this.listWord_Click);
             // 
-            // txtKanji
-            // 
-            this.txtKanji.Font = new System.Drawing.Font("Microsoft Sans Serif", 150F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKanji.Location = new System.Drawing.Point(296, 27);
-            this.txtKanji.Name = "txtKanji";
-            this.txtKanji.Size = new System.Drawing.Size(300, 234);
-            this.txtKanji.TabIndex = 2;
-            this.txtKanji.TextChanged += new System.EventHandler(this.txtKanji_TextChanged);
-            // 
-            // txtTemp
-            // 
-            this.txtTemp.Location = new System.Drawing.Point(418, 299);
-            this.txtTemp.Name = "txtTemp";
-            this.txtTemp.Size = new System.Drawing.Size(507, 20);
-            this.txtTemp.TabIndex = 3;
-            // 
-            // txtSentence
-            // 
-            this.txtSentence.Location = new System.Drawing.Point(418, 367);
-            this.txtSentence.Name = "txtSentence";
-            this.txtSentence.Size = new System.Drawing.Size(507, 20);
-            this.txtSentence.TabIndex = 4;
-            // 
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -171,15 +149,36 @@
             this.txtSearch.TabIndex = 5;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
+            // commandToolStripMenuItem
+            // 
+            this.commandToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuRefresh});
+            this.commandToolStripMenuItem.Name = "commandToolStripMenuItem";
+            this.commandToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
+            this.commandToolStripMenuItem.Text = "Command";
+            // 
+            // menuRefresh
+            // 
+            this.menuRefresh.Name = "menuRefresh";
+            this.menuRefresh.Size = new System.Drawing.Size(152, 22);
+            this.menuRefresh.Text = "Refresh";
+            this.menuRefresh.Click += new System.EventHandler(this.menuRefresh_Click);
+            // 
+            // panelDetail
+            // 
+            this.panelDetail.AutoScroll = true;
+            this.panelDetail.Location = new System.Drawing.Point(276, 66);
+            this.panelDetail.Name = "panelDetail";
+            this.panelDetail.Size = new System.Drawing.Size(700, 484);
+            this.panelDetail.TabIndex = 6;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 562);
+            this.ClientSize = new System.Drawing.Size(982, 562);
+            this.Controls.Add(this.panelDetail);
             this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.txtSentence);
-            this.Controls.Add(this.txtTemp);
-            this.Controls.Add(this.txtKanji);
             this.Controls.Add(this.listWord);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -200,16 +199,16 @@
         private System.Windows.Forms.ToolStripMenuItem traTừToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem choTừNgẫuNhiênToolStripMenuItem;
         private System.Windows.Forms.ListBox listWord;
-        private System.Windows.Forms.TextBox txtKanji;
         private System.Windows.Forms.ToolStripMenuItem menuAdd;
         private System.Windows.Forms.ToolStripMenuItem menuEditWord;
-        private System.Windows.Forms.TextBox txtTemp;
         private System.Windows.Forms.ToolStripMenuItem menuAddPhrase;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem menuAddSentence;
-        private System.Windows.Forms.TextBox txtSentence;
         private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.ToolStripMenuItem commandToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menuRefresh;
+        private System.Windows.Forms.Panel panelDetail;
     }
 }
 

@@ -54,7 +54,7 @@
             this.txtKunyomi.Location = new System.Drawing.Point(415, 188);
             this.txtKunyomi.Name = "txtKunyomi";
             this.txtKunyomi.Size = new System.Drawing.Size(215, 29);
-            this.txtKunyomi.TabIndex = 1;
+            this.txtKunyomi.TabIndex = 2;
             // 
             // txtOnyomi
             // 
@@ -62,14 +62,14 @@
             this.txtOnyomi.Location = new System.Drawing.Point(89, 188);
             this.txtOnyomi.Name = "txtOnyomi";
             this.txtOnyomi.Size = new System.Drawing.Size(228, 29);
-            this.txtOnyomi.TabIndex = 3;
+            this.txtOnyomi.TabIndex = 1;
             // 
             // btnDone
             // 
             this.btnDone.Location = new System.Drawing.Point(286, 302);
             this.btnDone.Name = "btnDone";
             this.btnDone.Size = new System.Drawing.Size(103, 36);
-            this.btnDone.TabIndex = 7;
+            this.btnDone.TabIndex = 5;
             this.btnDone.Text = "Hoàn tất";
             this.btnDone.UseVisualStyleBackColor = true;
             this.btnDone.Click += new System.EventHandler(this.btnDone_Click);
@@ -80,7 +80,7 @@
             this.txtHanViet.Location = new System.Drawing.Point(415, 249);
             this.txtHanViet.Name = "txtHanViet";
             this.txtHanViet.Size = new System.Drawing.Size(215, 26);
-            this.txtHanViet.TabIndex = 10;
+            this.txtHanViet.TabIndex = 4;
             // 
             // txtMeaning
             // 
@@ -88,7 +88,7 @@
             this.txtMeaning.Location = new System.Drawing.Point(89, 249);
             this.txtMeaning.Name = "txtMeaning";
             this.txtMeaning.Size = new System.Drawing.Size(228, 26);
-            this.txtMeaning.TabIndex = 11;
+            this.txtMeaning.TabIndex = 3;
             // 
             // label1
             // 
@@ -126,7 +126,7 @@
             this.label4.TabIndex = 15;
             this.label4.Text = "Âm Hán Việt";
             // 
-            // AddForm
+            // AddWordForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -141,7 +141,7 @@
             this.Controls.Add(this.txtOnyomi);
             this.Controls.Add(this.txtKunyomi);
             this.Controls.Add(this.txtKanji);
-            this.Name = "AddForm";
+            this.Name = "AddWordForm";
             this.Text = "Thêm từ mới";
             this.ResumeLayout(false);
             this.PerformLayout();

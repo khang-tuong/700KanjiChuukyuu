@@ -18,14 +18,12 @@ namespace CoreService.Model
 
         public Word() { }
 
-        public Word(string kanji, string meaning, string onyomi, string kunyomi, string hanviet)
+        public Word(string kanji, string meaning, List<string> onyomi, List<string> kunyomi, string hanviet)
         {
-            this.Onyomi = new List<string>();
-            this.Kunyomi = new List<string>();
+            this.Onyomi = onyomi;
+            this.Kunyomi = kunyomi;
             this.Kanji = kanji;
             this.Meaning = meaning;
-            this.Onyomi.Add(onyomi);
-            this.Kunyomi.Add(kunyomi);
             this.HanViet = hanviet;
         }
 

@@ -63,6 +63,12 @@
     <Compile Include="AddWordForm.Designer.cs">
       <DependentUpon>AddWordForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\ShowWordForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ShowWordForm.Designer.cs">
+      <DependentUpon>ShowWordForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditWordForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddWordForm.resx">
       <DependentUpon>AddWordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ShowWordForm.resx">
+      <DependentUpon>ShowWordForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditWordForm.resx">
       <DependentUpon>EditWordForm.cs</DependentUpon>
