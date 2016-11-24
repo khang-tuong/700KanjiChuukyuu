@@ -24,16 +24,19 @@ namespace _700KanjiChuukyuu.Controls
 
         public void LoadData()
         {
-            this.txtHanViet.Text = this.Word.HanViet;
-            this.txtKanji.Text = this.Word.Kanji;
-            this.txtKunyomi.Text = this.Word.GetKunyomi();
-            this.txtMeaning.Text = this.Word.Meaning;
-            this.txtOnyomi.Text = this.Word.GetOnyomi();
-            List<Phrase> phrases = DataManager.GetPhrasesContainWord(this.Word);
-            List<Sentence> sentences = DataManager.GetSentencesContainsPhrasesList(phrases);
+            if (this.Word != null)
+            {
+                this.txtHanViet.Text = this.Word.HanViet;
+                this.txtKanji.Text = this.Word.Kanji;
+                this.txtKunyomi.Text = this.Word.GetKunyomi();
+                this.txtMeaning.Text = this.Word.Meaning;
+                this.txtOnyomi.Text = this.Word.GetOnyomi();
+                List<Phrase> phrases = DataManager.GetPhrasesContainWord(this.Word);
+                List<Sentence> sentences = DataManager.GetSentencesContainsPhrasesList(phrases);
 
-            ShowPhrases(phrases);
-            ShowSentences(sentences);
+                ShowPhrases(phrases);
+                ShowSentences(sentences);
+            }
         }
 
         private void ShowPhrases(List<Phrase> phrases)

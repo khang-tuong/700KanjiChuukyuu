@@ -63,11 +63,23 @@
     <Compile Include="AddWordForm.Designer.cs">
       <DependentUpon>AddWordForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\ShowPhraseForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ShowPhraseForm.Designer.cs">
+      <DependentUpon>ShowPhraseForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ShowWordForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controls\ShowWordForm.Designer.cs">
       <DependentUpon>ShowWordForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditPhraseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditPhraseForm.Designer.cs">
+      <DependentUpon>EditPhraseForm.cs</DependentUpon>
     </Compile>
     <Compile Include="EditWordForm.cs">
       <SubType>Form</SubType>
@@ -92,8 +104,14 @@
     <EmbeddedResource Include="AddWordForm.resx">
       <DependentUpon>AddWordForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ShowPhraseForm.resx">
+      <DependentUpon>ShowPhraseForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\ShowWordForm.resx">
       <DependentUpon>ShowWordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditPhraseForm.resx">
+      <DependentUpon>EditPhraseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditWordForm.resx">
       <DependentUpon>EditWordForm.cs</DependentUpon>

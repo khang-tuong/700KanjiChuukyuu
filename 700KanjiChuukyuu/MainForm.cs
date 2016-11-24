@@ -21,9 +21,65 @@ namespace _700KanjiChuukyuu
         {
             InitializeComponent();
             this.dataManager = new DataManager();
+            this.listWord.MeasureItem += ListWord_MeasureItem;
+            this.listWord.DrawItem += ListWord_DrawItem;
             LoadData();
         }
 
+        private void ListWord_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            //Tránh lỗi lúc refresh
+            if (e.Index >= 0)
+            {
+                // If the item is the selected item, then draw the rectangle
+                // filled in blue. The item is selected when a bitwise And  
+                // of the State property and the DrawItemState.Selected 
+                // property is true.
+                if ((e.State & DrawItemState.Selected) == DrawItemState.Selected)
+                {
+                    e.Graphics.FillRectangle(Brushes.CornflowerBlue, e.Bounds);
+                    e.Graphics.DrawString(this.listWord.Items[e.Index].ToString(),
+                    new Font("MS Mincho", 14), Brushes.White, e.Bounds.X, e.Bounds.Y + 5);
+                }
+                else
+                {
+                    // Otherwise, draw the rectangle filled in beige.
+                    e.Graphics.FillRectangle(Brushes.White, e.Bounds);
+                    e.Graphics.DrawString(this.listWord.Items[e.Index].ToString(),
+                    new Font("MS Mincho", 14), Brushes.Black, e.Bounds.X, e.Bounds.Y + 5);
+                }
+
+                // Draw a rectangle in blue around each item.
+                //e.Graphics.DrawRectangle(Pens.Blue, e.Bounds);
+
+                // Draw the text in the item.
+            
+
+                // Draw the focus rectangle around the selected item.
+                e.DrawFocusRectangle();
+            }
+        }
+
+        private void ListWord_MeasureItem(object sender, MeasureItemEventArgs e)
+        {
+            ListBox lb = (ListBox)sender;
+            string itemString = (string)lb.Items[e.Index];
+
+            // Split the string at the " . "  character.
+            string[] resultStrings = itemString.Split('.');
+
+            // If the string contains more than one period, increase the 
+            // height by ten pixels; otherwise, increase the height by 
+            // five pixels.
+            if (resultStrings.Length > 2)
+            {
+                e.ItemHeight += 10;
+            }
+            else
+            {
+                e.ItemHeight += 5;
+            }
+        }
 
         private void LoadData()
         {
@@ -51,7 +107,6 @@ namespace _700KanjiChuukyuu
             this.listWord.Items.Clear();
             foreach (var item in data)
             {
-                this.listWord.Font = new Font("MS Mincho", 14);
                 this.listWord.ItemHeight = 30;
                 this.listWord.Items.Add(item);
             }
@@ -65,20 +120,26 @@ namespace _700KanjiChuukyuu
 
         private void listWord_Click(object sender, EventArgs e)
         {
-            string c = ((string) this.listWord.SelectedItem).Split(' ').ToList()[0];
-            Word w = DataManager.WordList.SingleOrDefault(q => q.Kanji == c);
-            if (w != null)
+            string text = (string)this.listWord.SelectedItem;
+            if (text.Length > 1)
             {
-                ShowWordForm f = new ShowWordForm(w);
-                f.Location = new Point(0, 0);
-                this.panelDetail.Controls.Clear();
-                this.panelDetail.Controls.Add(f);
-            } else
-            {
-                Phrase p = DataManager.Phrases.SingleOrDefault(q => q.Word == c);
+                Phrase p = DataManager.Phrases.SingleOrDefault(q => q.Word == text);
                 if (p != null)
                 {
-
+                    ShowPhraseForm f = new ShowPhraseForm(p);
+                    f.Location = new Point(0, 0);
+                    this.panelDetail.Controls.Clear();
+                    this.panelDetail.Controls.Add(f);
+                }
+            } else
+            {
+                Word w = DataManager.WordList.SingleOrDefault(q => q.Kanji == text);
+                if (w != null)
+                {
+                    ShowWordForm f = new ShowWordForm(w);
+                    f.Location = new Point(0, 0);
+                    this.panelDetail.Controls.Clear();
+                    this.panelDetail.Controls.Add(f);
                 }
             }
         }
@@ -91,9 +152,16 @@ namespace _700KanjiChuukyuu
 
         private void menuEditWord_Click(object sender, EventArgs e)
         {
-            char c = ((string)this.listWord.SelectedItem)[0];
-            EditWordForm f = new EditWordForm(DataManager.WordList.SingleOrDefault(q => q.Kanji == c.ToString()));
-            f.Show();
+            string text = (string) this.listWord.SelectedItem;
+            if (text.Length > 1)
+            {
+                EditPhraseForm f = new EditPhraseForm(DataManager.Phrases.SingleOrDefault(q => q.Word == text));
+                f.Show();
+            } else
+            {
+                EditWordForm f = new EditWordForm(DataManager.WordList.SingleOrDefault(q => q.Kanji == text));
+                f.Show();
+            }
         }
 
         private void menuAddSentence_Click(object sender, EventArgs e)
@@ -112,5 +180,11 @@ namespace _700KanjiChuukyuu
         {
             LoadData();
         }
+
+        private void menuEditPhrase_Click(object sender, EventArgs e)
+        {
+           
+        }
+
     }
 }

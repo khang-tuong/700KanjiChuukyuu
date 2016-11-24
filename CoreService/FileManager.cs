@@ -22,6 +22,11 @@ namespace CoreService
                     DataManager.WordList = (List<Word>)formatter.Deserialize(stream);
                     stream.Dispose();
                     stream.Close();
+                    int i = 1;
+                    foreach (var item in DataManager.WordList)
+                    {
+                        item.Id = i++;
+                    }
                     return null;
                 }
                 return "File không có dữ liệu";
@@ -81,6 +86,11 @@ namespace CoreService
                     DataManager.Phrases = (List<Phrase>)formatter.Deserialize(stream);
                     stream.Dispose();
                     stream.Close();
+                    int i = 1;
+                    foreach (var item in DataManager.Phrases)
+                    {
+                        item.Id = i++;
+                    }
                     return null;
                 }
                 return "File không có dữ liệu";
@@ -106,6 +116,11 @@ namespace CoreService
                     DataManager.Sentences = (List<Sentence>)formatter.Deserialize(stream);
                     stream.Dispose();
                     stream.Close();
+                    int i = 1;
+                    foreach (var item in DataManager.Sentences)
+                    {
+                        item.Id = i++;
+                    }
                     return null;
                 }
                 return "File không có dữ liệu";

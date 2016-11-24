@@ -19,15 +19,8 @@ namespace CoreService
 
         public static void UpdateWordList(Word w)
         {
-            int length = WordList.Count;
-            for (int i = 0; i < length; i++)
-            {
-                if (WordList[i].Kanji == w.Kanji)
-                {
-                    WordList[i] = w;
-                    break;
-                }
-            }
+            Word word = DataManager.WordList.SingleOrDefault(q => q.Id == w.Id);
+            word = w;
             FileManager.WriteWordFile();
         }
 
@@ -37,16 +30,9 @@ namespace CoreService
             FileManager.WriteSentenceFile();
         }
 
-        public static List<string> GetSentencesContainPhrase(string p)
+        public static List<Sentence> GetSentencesContainPhrase(Phrase p)
         {
-            List<string> r = new List<string>();
-            foreach (var item in Sentences)
-            {
-                if (item.UnderlineWords.Contains(p))
-                {
-                    r.Add(item.Words);
-                }
-            }
+            var r = Sentences.Where(q => q.UnderlineWords.Contains(p.Word)).ToList();
             return r;
         }
 
@@ -71,7 +57,7 @@ namespace CoreService
             {
                 if (item.Kanji.Contains(key) || item.HanViet.Contains(key))
                 {
-                    temp.Add(item.Kanji + " - " + item.HanViet);
+                    temp.Add(item.Kanji);
                 }
             }
             foreach (var item in Phrases)

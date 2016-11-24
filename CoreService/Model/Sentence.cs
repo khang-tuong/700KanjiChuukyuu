@@ -13,6 +13,7 @@ namespace CoreService.Model
         public string Words { get; set; }
         public List<string> UnderlineWords { get; set; }
         public List<string> Answers { get; set; }
+        public string Meaning { get; set; }
 
         public Sentence(string w, List<string> highlight, List<string> answers)
         {

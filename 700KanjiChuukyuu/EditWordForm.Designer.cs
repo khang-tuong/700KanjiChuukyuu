@@ -120,10 +120,10 @@
             // 
             // txtKanji
             // 
-            this.txtKanji.Enabled = false;
             this.txtKanji.Font = new System.Drawing.Font("Microsoft Sans Serif", 100F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtKanji.Location = new System.Drawing.Point(12, 12);
             this.txtKanji.Name = "txtKanji";
+            this.txtKanji.ReadOnly = true;
             this.txtKanji.Size = new System.Drawing.Size(589, 158);
             this.txtKanji.TabIndex = 16;
             // 
