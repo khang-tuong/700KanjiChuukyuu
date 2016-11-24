@@ -78,5 +78,10 @@ namespace _700KanjiChuukyuu.Controls
             }
             this.panelSentences.Location = new Point(this.panelPhrases.Location.X, this.panelPhrases.Location.Y + this.panelPhrases.Height + 7);
         }
+
+        private void ShowWordForm_MouseEnter(object sender, EventArgs e)
+        {
+            this.Parent.Focus();
+        }
     }
 }

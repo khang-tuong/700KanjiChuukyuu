@@ -38,6 +38,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cbxSection = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // txtKanji
@@ -66,7 +68,7 @@
             // 
             // btnDone
             // 
-            this.btnDone.Location = new System.Drawing.Point(286, 302);
+            this.btnDone.Location = new System.Drawing.Point(388, 302);
             this.btnDone.Name = "btnDone";
             this.btnDone.Size = new System.Drawing.Size(103, 36);
             this.btnDone.TabIndex = 5;
@@ -126,11 +128,30 @@
             this.label4.TabIndex = 15;
             this.label4.Text = "Âm Hán Việt";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(38, 302);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "Nhóm";
+            // 
+            // cbxSection
+            // 
+            this.cbxSection.FormattingEnabled = true;
+            this.cbxSection.Location = new System.Drawing.Point(89, 299);
+            this.cbxSection.Name = "cbxSection";
+            this.cbxSection.Size = new System.Drawing.Size(228, 21);
+            this.cbxSection.TabIndex = 18;
+            // 
             // AddWordForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(667, 351);
+            this.Controls.Add(this.cbxSection);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -160,5 +181,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cbxSection;
     }
 }

@@ -17,11 +17,12 @@ namespace _700KanjiChuukyuu
         public AddWordForm()
         {
             InitializeComponent();
-            InitializePlaceholder();
+            InitializeData();
         }
 
-        private void InitializePlaceholder()
+        private void InitializeData()
         {
+
         }
 
         private void btnDone_Click(object sender, EventArgs e)
@@ -34,8 +35,7 @@ namespace _700KanjiChuukyuu
                 List<string> onyomi = this.txtOnyomi.Text.Replace('、', ',').Split(',').ToList();
                 string meaning = this.txtMeaning.Text;
                 Word w = new Word(kanji, meaning, onyomi, kunyomi, hanviet);
-                DataManager.WordList.Add(w);
-                FileManager.WriteWordFile();
+                DataManager.AddWord(w);
                 Reset();
             } else
             {
@@ -51,6 +51,7 @@ namespace _700KanjiChuukyuu
             this.txtKunyomi.Text = "";
             this.txtMeaning.Text = "";
             this.txtOnyomi.Text = "";
+            this.txtKanji.Focus();
         }
     }
 }

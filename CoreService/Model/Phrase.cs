@@ -15,5 +15,6 @@ namespace CoreService.Model
         public string Hiragana { get; set; }
         public List<char> LinkedWord { get; set; }
         public string Meaning { get; set; }
+        public Section Section { get; set; }
     }
 }

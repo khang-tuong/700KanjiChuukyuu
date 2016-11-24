@@ -21,7 +21,10 @@ namespace _700KanjiChuukyuu
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Sentence s = new Sentence(this.txtSentence.Text, this.txtHighlight.Text.Split(',').ToList(), this.txtAnswer.Text.Split(',').ToList());
+            Sentence s = new Sentence(this.txtSentence.Text, 
+                this.txtHighlight.Text.Replace('、', ',').Split(',').ToList(), 
+                this.txtAnswer.Text.Replace('、', ',').Split(',').ToList(),
+                this.txtMeaning.Text);
             DataManager.AddSentence(s);
         }
     }

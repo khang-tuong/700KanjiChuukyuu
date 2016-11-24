@@ -41,10 +41,10 @@
             this.choTừNgẫuNhiênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.commandToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuRefresh = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuPlayGame = new System.Windows.Forms.ToolStripMenuItem();
             this.listWord = new System.Windows.Forms.ListBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.panelDetail = new System.Windows.Forms.Panel();
-            this.menuEditPhrase = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,7 +56,7 @@
             this.commandToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(946, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(986, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -67,7 +67,6 @@
             this.menuEditWord,
             this.toolStripSeparator1,
             this.menuAddPhrase,
-            this.menuEditPhrase,
             this.toolStripSeparator2,
             this.menuAddSentence});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
@@ -136,7 +135,8 @@
             // commandToolStripMenuItem
             // 
             this.commandToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuRefresh});
+            this.menuRefresh,
+            this.menuPlayGame});
             this.commandToolStripMenuItem.Name = "commandToolStripMenuItem";
             this.commandToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
             this.commandToolStripMenuItem.Text = "Command";
@@ -144,9 +144,16 @@
             // menuRefresh
             // 
             this.menuRefresh.Name = "menuRefresh";
-            this.menuRefresh.Size = new System.Drawing.Size(113, 22);
+            this.menuRefresh.Size = new System.Drawing.Size(158, 22);
             this.menuRefresh.Text = "Refresh";
             this.menuRefresh.Click += new System.EventHandler(this.menuRefresh_Click);
+            // 
+            // menuPlayGame
+            // 
+            this.menuPlayGame.Name = "menuPlayGame";
+            this.menuPlayGame.Size = new System.Drawing.Size(158, 22);
+            this.menuPlayGame.Text = "Chơi game nào!";
+            this.menuPlayGame.Click += new System.EventHandler(this.menuPlayGame_Click);
             // 
             // listWord
             // 
@@ -172,21 +179,16 @@
             this.panelDetail.AutoScroll = true;
             this.panelDetail.Location = new System.Drawing.Point(276, 66);
             this.panelDetail.Name = "panelDetail";
-            this.panelDetail.Size = new System.Drawing.Size(660, 484);
+            this.panelDetail.Size = new System.Drawing.Size(698, 484);
             this.panelDetail.TabIndex = 6;
-            // 
-            // menuEditPhrase
-            // 
-            this.menuEditPhrase.Name = "menuEditPhrase";
-            this.menuEditPhrase.Size = new System.Drawing.Size(152, 22);
-            this.menuEditPhrase.Text = "Sửa cụm từ";
-            this.menuEditPhrase.Click += new System.EventHandler(this.menuEditPhrase_Click);
+            this.panelDetail.MouseEnter += new System.EventHandler(this.panelDetail_MouseEnter);
+            this.panelDetail.MouseHover += new System.EventHandler(this.panelDetail_MouseHover);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(946, 562);
+            this.ClientSize = new System.Drawing.Size(986, 562);
             this.Controls.Add(this.panelDetail);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.listWord);
@@ -219,7 +221,7 @@
         private System.Windows.Forms.ToolStripMenuItem commandToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem menuRefresh;
         private System.Windows.Forms.Panel panelDetail;
-        private System.Windows.Forms.ToolStripMenuItem menuEditPhrase;
+        private System.Windows.Forms.ToolStripMenuItem menuPlayGame;
     }
 }
 

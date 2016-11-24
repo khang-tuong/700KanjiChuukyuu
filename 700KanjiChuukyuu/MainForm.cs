@@ -39,14 +39,14 @@ namespace _700KanjiChuukyuu
                 {
                     e.Graphics.FillRectangle(Brushes.CornflowerBlue, e.Bounds);
                     e.Graphics.DrawString(this.listWord.Items[e.Index].ToString(),
-                    new Font("MS Mincho", 14), Brushes.White, e.Bounds.X, e.Bounds.Y + 5);
+                    new Font("HanaMinA", 14), Brushes.White, e.Bounds.X, e.Bounds.Y + 5);
                 }
                 else
                 {
                     // Otherwise, draw the rectangle filled in beige.
                     e.Graphics.FillRectangle(Brushes.White, e.Bounds);
                     e.Graphics.DrawString(this.listWord.Items[e.Index].ToString(),
-                    new Font("MS Mincho", 14), Brushes.Black, e.Bounds.X, e.Bounds.Y + 5);
+                    new Font("HanaMinA", 14), Brushes.Black, e.Bounds.X, e.Bounds.Y + 5);
                 }
 
                 // Draw a rectangle in blue around each item.
@@ -127,7 +127,7 @@ namespace _700KanjiChuukyuu
                 if (p != null)
                 {
                     ShowPhraseForm f = new ShowPhraseForm(p);
-                    f.Location = new Point(0, 0);
+                    f.Location = new Point(15, 0);
                     this.panelDetail.Controls.Clear();
                     this.panelDetail.Controls.Add(f);
                 }
@@ -137,7 +137,7 @@ namespace _700KanjiChuukyuu
                 if (w != null)
                 {
                     ShowWordForm f = new ShowWordForm(w);
-                    f.Location = new Point(0, 0);
+                    f.Location = new Point(15, 0);
                     this.panelDetail.Controls.Clear();
                     this.panelDetail.Controls.Add(f);
                 }
@@ -181,10 +181,20 @@ namespace _700KanjiChuukyuu
             LoadData();
         }
 
-        private void menuEditPhrase_Click(object sender, EventArgs e)
+
+        private void menuPlayGame_Click(object sender, EventArgs e)
         {
-           
+
         }
 
+        private void panelDetail_MouseEnter(object sender, EventArgs e)
+        {
+            this.panelDetail.Focus();
+        }
+
+        private void panelDetail_MouseHover(object sender, EventArgs e)
+        {
+            this.panelDetail.Focus();
+        }
     }
 }

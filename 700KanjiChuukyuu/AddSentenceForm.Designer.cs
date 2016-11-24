@@ -35,6 +35,8 @@
             this.txtAnswer = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.txtMeaning = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtSentence
@@ -94,7 +96,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(308, 253);
+            this.button1.Location = new System.Drawing.Point(306, 340);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(115, 36);
             this.button1.TabIndex = 6;
@@ -102,11 +104,31 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // txtMeaning
+            // 
+            this.txtMeaning.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMeaning.Location = new System.Drawing.Point(12, 280);
+            this.txtMeaning.Name = "txtMeaning";
+            this.txtMeaning.Size = new System.Drawing.Size(723, 29);
+            this.txtMeaning.TabIndex = 8;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(15, 257);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(50, 20);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Nghĩa";
+            // 
             // AddSentenceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(747, 321);
+            this.ClientSize = new System.Drawing.Size(747, 399);
+            this.Controls.Add(this.txtMeaning);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtAnswer);
             this.Controls.Add(this.label3);
@@ -130,5 +152,7 @@
         private System.Windows.Forms.TextBox txtAnswer;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtMeaning;
+        private System.Windows.Forms.Label label4;
     }
 }

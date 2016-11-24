@@ -15,6 +15,7 @@ namespace CoreService.Model
         public List<string> Onyomi { get; set; }
         public List<string> Kunyomi { get; set; }
         public string HanViet { get; set; }
+        public Section Section { get; set; }
 
         public Word() { }
 

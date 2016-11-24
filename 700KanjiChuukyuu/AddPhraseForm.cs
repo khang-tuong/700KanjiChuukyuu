@@ -34,8 +34,7 @@ namespace _700KanjiChuukyuu
                 p.Word = kanji;
                 p.Meaning = meaning;
 
-                DataManager.Phrases.Add(p);
-                FileManager.WritePhraseFile();
+                DataManager.AddPhrase(p);
             } else
             {
                 MessageBox.Show("Cụm từ này có rồi!");
@@ -49,6 +48,7 @@ namespace _700KanjiChuukyuu
             this.txtKanji.Text = "";
             this.txtMeaning.Text = "";
             this.cbxOnyomi.Checked = true;
+            this.txtKanji.Focus();
         }
     }
 }

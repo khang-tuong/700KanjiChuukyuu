@@ -151,7 +151,7 @@
             // 
             this.txtKanji.BackColor = System.Drawing.Color.White;
             this.txtKanji.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtKanji.Font = new System.Drawing.Font("Microsoft Sans Serif", 100F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtKanji.Font = new System.Drawing.Font("Microsoft Sans Serif", 99.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtKanji.Location = new System.Drawing.Point(3, 10);
             this.txtKanji.Name = "txtKanji";
             this.txtKanji.ReadOnly = true;
@@ -253,6 +253,7 @@
             this.Controls.Add(this.txtKanji);
             this.Name = "ShowWordForm";
             this.Size = new System.Drawing.Size(651, 682);
+            this.MouseEnter += new System.EventHandler(this.ShowWordForm_MouseEnter);
             this.panelSpell.ResumeLayout(false);
             this.panelSpell.PerformLayout();
             this.panelMean.ResumeLayout(false);

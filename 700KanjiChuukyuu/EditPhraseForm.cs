@@ -34,17 +34,16 @@ namespace _700KanjiChuukyuu
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Phrase p = DataManager.Phrases.SingleOrDefault(q => q.Id == this.Phrase.Id);
-            if (p != null)
-            {
-                p.Meaning = this.txtMeaning.Text;
-                p.Hiragana = this.txtHiragana.Text;
-                p.LinkedWord = p.Word.ToCharArray().ToList();
-                p.Onyomi = this.cbxOnyomi.Checked;
+            this.Phrase.Meaning = this.txtMeaning.Text;
+            this.Phrase.Hiragana = this.txtHiragana.Text;
+            this.Phrase.Word = this.txtKanji.Text;
+            this.Phrase.LinkedWord = this.Phrase.Word.ToCharArray().ToList();
+            this.Phrase.Onyomi = this.cbxOnyomi.Checked;
+            this.Phrase.Id = this.Phrase.Id;
 
-                FileManager.WritePhraseFile();
-                Reset();
-            }
+            DataManager.UpdatePhrase(this.Phrase);
+            //Reset();
+            this.Dispose();
         }
 
         private void Reset()

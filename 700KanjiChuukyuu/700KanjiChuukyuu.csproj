@@ -81,6 +81,12 @@
     <Compile Include="EditPhraseForm.Designer.cs">
       <DependentUpon>EditPhraseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditSentenceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditSentenceForm.Designer.cs">
+      <DependentUpon>EditSentenceForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditWordForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditPhraseForm.resx">
       <DependentUpon>EditPhraseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditSentenceForm.resx">
+      <DependentUpon>EditSentenceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditWordForm.resx">
       <DependentUpon>EditWordForm.cs</DependentUpon>

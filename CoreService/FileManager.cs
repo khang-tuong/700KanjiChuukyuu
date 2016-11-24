@@ -97,7 +97,7 @@ namespace CoreService
             }
             catch (FileNotFoundException)
             {
-                return "Không tìm thấy word.dat";
+                return "Không tìm thấy phrase.dat";
             }
             catch (System.Runtime.Serialization.SerializationException)
             {
@@ -142,6 +142,53 @@ namespace CoreService
                 FileStream stream = new FileStream(Config.SENTENCE_FILE_PATH, FileMode.OpenOrCreate, FileAccess.Write);
                 BinaryFormatter formatter = new BinaryFormatter();
                 formatter.Serialize(stream, DataManager.Sentences);
+                stream.Dispose();
+                stream.Close();
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+        }
+
+        public static string ReadSectionFile()
+        {
+            try
+            {
+                FileStream stream = new FileStream(Config.SECTION_FILE_PATH, FileMode.Open, FileAccess.Read);
+                if (stream.Length != 0)
+                {
+                    BinaryFormatter formatter = new BinaryFormatter();
+                    DataManager.Sections = (List<Section>)formatter.Deserialize(stream);
+                    stream.Dispose();
+                    stream.Close();
+                    int i = 1;
+                    foreach (var item in DataManager.Sections)
+                    {
+                        item.Id = i++;
+                    }
+                    return null;
+                }
+                return "File không có dữ liệu";
+            }
+            catch (FileNotFoundException)
+            {
+                return "Không tìm thấy sentence.dat";
+            }
+            catch (System.Runtime.Serialization.SerializationException)
+            {
+                return "File bị hỏng format!";
+            }
+        }
+
+        public static void WriteSectionFile()
+        {
+            try
+            {
+                FileStream stream = new FileStream(Config.SECTION_FILE_PATH, FileMode.OpenOrCreate, FileAccess.Write);
+                BinaryFormatter formatter = new BinaryFormatter();
+                formatter.Serialize(stream, DataManager.Sections);
                 stream.Dispose();
                 stream.Close();
             }
