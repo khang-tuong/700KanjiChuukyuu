@@ -17,6 +17,16 @@ namespace _700KanjiChuukyuu
         public AddSentenceForm()
         {
             InitializeComponent();
+            InitializeSections();
+        }
+
+        private void InitializeSections()
+        {
+            List<Section> s = DataManager.Sections;
+            foreach (var item in s)
+            {
+                this.cbxSection.Items.Add(item.Name);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -25,6 +35,7 @@ namespace _700KanjiChuukyuu
                 this.txtHighlight.Text.Replace('、', ',').Split(',').ToList(), 
                 this.txtAnswer.Text.Replace('、', ',').Split(',').ToList(),
                 this.txtMeaning.Text);
+            s.Section = DataManager.Sections.SingleOrDefault(q => q.Name == (string)this.cbxSection.SelectedItem);
             DataManager.AddSentence(s);
         }
     }

@@ -16,5 +16,10 @@ namespace CoreService.Model
         public List<char> LinkedWord { get; set; }
         public string Meaning { get; set; }
         public Section Section { get; set; }
+
+        public override string ToString()
+        {
+            return this.Word + "\n" + this.Meaning;
+        }
     }
 }

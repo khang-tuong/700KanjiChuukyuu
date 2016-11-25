@@ -51,6 +51,12 @@
     <Compile Include="AddPhraseForm.Designer.cs">
       <DependentUpon>AddPhraseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddSectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddSectionForm.Designer.cs">
+      <DependentUpon>AddSectionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddSentenceForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +68,12 @@
     </Compile>
     <Compile Include="AddWordForm.Designer.cs">
       <DependentUpon>AddWordForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CustomListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomListBox.Designer.cs">
+      <DependentUpon>CustomListBox.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\ShowPhraseForm.cs">
       <SubType>UserControl</SubType>
@@ -104,11 +116,17 @@
     <EmbeddedResource Include="AddPhraseForm.resx">
       <DependentUpon>AddPhraseForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddSectionForm.resx">
+      <DependentUpon>AddSectionForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddSentenceForm.resx">
       <DependentUpon>AddSentenceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddWordForm.resx">
       <DependentUpon>AddWordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CustomListBox.resx">
+      <DependentUpon>CustomListBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ShowPhraseForm.resx">
       <DependentUpon>ShowPhraseForm.cs</DependentUpon>

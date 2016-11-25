@@ -17,10 +17,21 @@ namespace _700KanjiChuukyuu
         public AddPhraseForm()
         {
             InitializeComponent();
+            InitializeSections();
+        }
+
+        private void InitializeSections()
+        {
+            List<Section> s = DataManager.Sections;
+            foreach (var item in s)
+            {
+                this.cbxSection.Items.Add(item.Name);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             string kanji = this.txtKanji.Text;
             string hiragana = this.txtHiragana.Text;
             string meaning = this.txtMeaning.Text;
@@ -33,6 +44,7 @@ namespace _700KanjiChuukyuu
                 p.LinkedWord = kanji.ToCharArray().ToList();
                 p.Word = kanji;
                 p.Meaning = meaning;
+                p.Section = DataManager.Sections.SingleOrDefault(q => q.Name == (string)this.cbxSection.SelectedItem);
 
                 DataManager.AddPhrase(p);
             } else
@@ -50,5 +62,7 @@ namespace _700KanjiChuukyuu
             this.cbxOnyomi.Checked = true;
             this.txtKanji.Focus();
         }
+
+       
     }
 }

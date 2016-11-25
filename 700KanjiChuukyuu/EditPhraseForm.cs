@@ -21,7 +21,17 @@ namespace _700KanjiChuukyuu
         {
             InitializeComponent();
             this.Phrase = p;
+            InitializeSections();
             LoadData();
+        }
+
+        private void InitializeSections()
+        {
+            List<Section> s = DataManager.Sections;
+            foreach (var item in s)
+            {
+                this.cbxSection.Items.Add(item.Name);
+            }
         }
 
         public void LoadData()
@@ -30,6 +40,7 @@ namespace _700KanjiChuukyuu
             this.txtKanji.Text = this.Phrase.Word;
             this.txtMeaning.Text = this.Phrase.Meaning;
             this.cbxOnyomi.Checked = this.Phrase.Onyomi;
+            this.cbxSection.SelectedItem = (this.Phrase.Section != null ? this.Phrase.Section.Name : "");
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -40,6 +51,7 @@ namespace _700KanjiChuukyuu
             this.Phrase.LinkedWord = this.Phrase.Word.ToCharArray().ToList();
             this.Phrase.Onyomi = this.cbxOnyomi.Checked;
             this.Phrase.Id = this.Phrase.Id;
+            this.Phrase.Section = DataManager.Sections.SingleOrDefault(q => q.Name == (string)this.cbxSection.SelectedItem);
 
             DataManager.UpdatePhrase(this.Phrase);
             //Reset();

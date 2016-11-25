@@ -56,7 +56,7 @@
             this.lbHanViet.BackColor = System.Drawing.Color.White;
             this.lbHanViet.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbHanViet.ForeColor = System.Drawing.Color.Black;
-            this.lbHanViet.Location = new System.Drawing.Point(31, 133);
+            this.lbHanViet.Location = new System.Drawing.Point(31, 122);
             this.lbHanViet.Name = "lbHanViet";
             this.lbHanViet.Padding = new System.Windows.Forms.Padding(5);
             this.lbHanViet.Size = new System.Drawing.Size(103, 29);
@@ -82,7 +82,7 @@
             this.lbKunyomi.BackColor = System.Drawing.Color.White;
             this.lbKunyomi.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbKunyomi.ForeColor = System.Drawing.Color.Black;
-            this.lbKunyomi.Location = new System.Drawing.Point(31, 95);
+            this.lbKunyomi.Location = new System.Drawing.Point(31, 84);
             this.lbKunyomi.Name = "lbKunyomi";
             this.lbKunyomi.Padding = new System.Windows.Forms.Padding(5);
             this.lbKunyomi.Size = new System.Drawing.Size(79, 29);
@@ -95,7 +95,7 @@
             this.lbOnyomi.BackColor = System.Drawing.Color.White;
             this.lbOnyomi.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbOnyomi.ForeColor = System.Drawing.Color.Black;
-            this.lbOnyomi.Location = new System.Drawing.Point(31, 57);
+            this.lbOnyomi.Location = new System.Drawing.Point(31, 46);
             this.lbOnyomi.Name = "lbOnyomi";
             this.lbOnyomi.Padding = new System.Windows.Forms.Padding(5);
             this.lbOnyomi.Size = new System.Drawing.Size(69, 29);
@@ -119,7 +119,7 @@
             this.txtHanViet.BackColor = System.Drawing.Color.White;
             this.txtHanViet.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtHanViet.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHanViet.Location = new System.Drawing.Point(148, 138);
+            this.txtHanViet.Location = new System.Drawing.Point(148, 127);
             this.txtHanViet.Name = "txtHanViet";
             this.txtHanViet.ReadOnly = true;
             this.txtHanViet.Size = new System.Drawing.Size(215, 19);
@@ -130,7 +130,7 @@
             this.txtOnyomi.BackColor = System.Drawing.Color.White;
             this.txtOnyomi.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtOnyomi.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOnyomi.Location = new System.Drawing.Point(147, 56);
+            this.txtOnyomi.Location = new System.Drawing.Point(147, 45);
             this.txtOnyomi.Name = "txtOnyomi";
             this.txtOnyomi.ReadOnly = true;
             this.txtOnyomi.Size = new System.Drawing.Size(228, 22);
@@ -141,7 +141,7 @@
             this.txtKunyomi.BackColor = System.Drawing.Color.White;
             this.txtKunyomi.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtKunyomi.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKunyomi.Location = new System.Drawing.Point(148, 94);
+            this.txtKunyomi.Location = new System.Drawing.Point(148, 83);
             this.txtKunyomi.Name = "txtKunyomi";
             this.txtKunyomi.ReadOnly = true;
             this.txtKunyomi.Size = new System.Drawing.Size(215, 22);
@@ -174,6 +174,7 @@
             // panelSpell
             // 
             this.panelSpell.BackColor = System.Drawing.Color.White;
+            this.panelSpell.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelSpell.Controls.Add(this.label5);
             this.panelSpell.Controls.Add(this.lbOnyomi);
             this.panelSpell.Controls.Add(this.txtKunyomi);

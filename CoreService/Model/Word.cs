@@ -47,5 +47,10 @@ namespace CoreService.Model
             }
             return s.Substring(0, s.Length - 2);
         }
+
+        public override string ToString()
+        {
+            return this.Kanji + "\n" + this.Meaning;
+        }
     }
 }

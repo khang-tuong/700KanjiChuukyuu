@@ -36,15 +36,17 @@
             this.menuAddPhrase = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.menuAddSentence = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuAddSection = new System.Windows.Forms.ToolStripMenuItem();
             this.modeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.traTừToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.choTừNgẫuNhiênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.commandToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuRefresh = new System.Windows.Forms.ToolStripMenuItem();
             this.menuPlayGame = new System.Windows.Forms.ToolStripMenuItem();
-            this.listWord = new System.Windows.Forms.ListBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.panelDetail = new System.Windows.Forms.Panel();
+            this.cbxSection = new System.Windows.Forms.ComboBox();
+            this.listWord2 = new _700KanjiChuukyuu.Controls.CustomListBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,7 +70,8 @@
             this.toolStripSeparator1,
             this.menuAddPhrase,
             this.toolStripSeparator2,
-            this.menuAddSentence});
+            this.menuAddSentence,
+            this.menuAddSection});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
@@ -76,40 +79,47 @@
             // menuAdd
             // 
             this.menuAdd.Name = "menuAdd";
-            this.menuAdd.Size = new System.Drawing.Size(152, 22);
+            this.menuAdd.Size = new System.Drawing.Size(146, 22);
             this.menuAdd.Text = "Thêm từ";
             this.menuAdd.Click += new System.EventHandler(this.menuAdd_Click);
             // 
             // menuEditWord
             // 
             this.menuEditWord.Name = "menuEditWord";
-            this.menuEditWord.Size = new System.Drawing.Size(152, 22);
+            this.menuEditWord.Size = new System.Drawing.Size(146, 22);
             this.menuEditWord.Text = "Sửa từ";
             this.menuEditWord.Click += new System.EventHandler(this.menuEditWord_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(143, 6);
             // 
             // menuAddPhrase
             // 
             this.menuAddPhrase.Name = "menuAddPhrase";
-            this.menuAddPhrase.Size = new System.Drawing.Size(152, 22);
+            this.menuAddPhrase.Size = new System.Drawing.Size(146, 22);
             this.menuAddPhrase.Text = "Thêm cụm từ";
             this.menuAddPhrase.Click += new System.EventHandler(this.menuAddPhrase_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(143, 6);
             // 
             // menuAddSentence
             // 
             this.menuAddSentence.Name = "menuAddSentence";
-            this.menuAddSentence.Size = new System.Drawing.Size(152, 22);
+            this.menuAddSentence.Size = new System.Drawing.Size(146, 22);
             this.menuAddSentence.Text = "Thêm câu";
             this.menuAddSentence.Click += new System.EventHandler(this.menuAddSentence_Click);
+            // 
+            // menuAddSection
+            // 
+            this.menuAddSection.Name = "menuAddSection";
+            this.menuAddSection.Size = new System.Drawing.Size(146, 22);
+            this.menuAddSection.Text = "Thêm nhóm";
+            this.menuAddSection.Click += new System.EventHandler(this.menuAddSection_Click);
             // 
             // modeToolStripMenuItem
             // 
@@ -155,22 +165,12 @@
             this.menuPlayGame.Text = "Chơi game nào!";
             this.menuPlayGame.Click += new System.EventHandler(this.menuPlayGame_Click);
             // 
-            // listWord
-            // 
-            this.listWord.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.listWord.FormattingEnabled = true;
-            this.listWord.Location = new System.Drawing.Point(12, 66);
-            this.listWord.Name = "listWord";
-            this.listWord.Size = new System.Drawing.Size(246, 485);
-            this.listWord.TabIndex = 1;
-            this.listWord.Click += new System.EventHandler(this.listWord_Click);
-            // 
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.Location = new System.Drawing.Point(12, 27);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(246, 26);
+            this.txtSearch.Size = new System.Drawing.Size(124, 26);
             this.txtSearch.TabIndex = 5;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
@@ -184,14 +184,35 @@
             this.panelDetail.MouseEnter += new System.EventHandler(this.panelDetail_MouseEnter);
             this.panelDetail.MouseHover += new System.EventHandler(this.panelDetail_MouseHover);
             // 
+            // cbxSection
+            // 
+            this.cbxSection.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxSection.FormattingEnabled = true;
+            this.cbxSection.Location = new System.Drawing.Point(142, 25);
+            this.cbxSection.Name = "cbxSection";
+            this.cbxSection.Size = new System.Drawing.Size(115, 28);
+            this.cbxSection.TabIndex = 7;
+            this.cbxSection.SelectedIndexChanged += new System.EventHandler(this.cbxSection_SelectedIndexChanged);
+            // 
+            // listWord2
+            // 
+            this.listWord2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.listWord2.FormattingEnabled = true;
+            this.listWord2.Location = new System.Drawing.Point(12, 66);
+            this.listWord2.Name = "listWord2";
+            this.listWord2.Size = new System.Drawing.Size(258, 485);
+            this.listWord2.TabIndex = 8;
+            this.listWord2.Click += new System.EventHandler(this.listWord_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(986, 562);
+            this.Controls.Add(this.listWord2);
+            this.Controls.Add(this.cbxSection);
             this.Controls.Add(this.panelDetail);
             this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.listWord);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
@@ -210,7 +231,6 @@
         private System.Windows.Forms.ToolStripMenuItem modeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem traTừToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem choTừNgẫuNhiênToolStripMenuItem;
-        private System.Windows.Forms.ListBox listWord;
         private System.Windows.Forms.ToolStripMenuItem menuAdd;
         private System.Windows.Forms.ToolStripMenuItem menuEditWord;
         private System.Windows.Forms.ToolStripMenuItem menuAddPhrase;
@@ -222,6 +242,9 @@
         private System.Windows.Forms.ToolStripMenuItem menuRefresh;
         private System.Windows.Forms.Panel panelDetail;
         private System.Windows.Forms.ToolStripMenuItem menuPlayGame;
+        private System.Windows.Forms.ToolStripMenuItem menuAddSection;
+        private System.Windows.Forms.ComboBox cbxSection;
+        private Controls.CustomListBox listWord2;
     }
 }
 

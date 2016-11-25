@@ -37,6 +37,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtSentence = new System.Windows.Forms.TextBox();
+            this.cbxSection = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtMeaning
@@ -60,7 +62,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(306, 327);
+            this.button1.Location = new System.Drawing.Point(306, 395);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(115, 36);
             this.button1.TabIndex = 15;
@@ -122,11 +124,33 @@
             this.txtSentence.Size = new System.Drawing.Size(723, 26);
             this.txtSentence.TabIndex = 9;
             // 
+            // cbxSection
+            // 
+            this.cbxSection.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxSection.FormattingEnabled = true;
+            this.cbxSection.Location = new System.Drawing.Point(16, 357);
+            this.cbxSection.Name = "cbxSection";
+            this.cbxSection.Size = new System.Drawing.Size(718, 28);
+            this.cbxSection.TabIndex = 19;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(14, 324);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(51, 20);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "Nhóm";
+            // 
             // EditSentenceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(752, 374);
+            this.ClientSize = new System.Drawing.Size(752, 443);
+            this.Controls.Add(this.cbxSection);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.txtMeaning);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button1);
@@ -154,5 +178,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtSentence;
+        private System.Windows.Forms.ComboBox cbxSection;
+        private System.Windows.Forms.Label label5;
     }
 }

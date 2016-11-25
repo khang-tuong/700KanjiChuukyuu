@@ -20,7 +20,17 @@ namespace _700KanjiChuukyuu
         {
             InitializeComponent();
             this.Sentence = s;
+            InitializeSections();
             LoadData();
+        }
+
+        private void InitializeSections()
+        {
+            List<Section> s = DataManager.Sections;
+            foreach (var item in s)
+            {
+                this.cbxSection.Items.Add(item.Name);
+            }
         }
 
         private void LoadData()
@@ -36,6 +46,7 @@ namespace _700KanjiChuukyuu
             this.txtHighlight.Text = underlined;
             this.txtMeaning.Text = this.Sentence.Meaning;
             this.txtSentence.Text = this.Sentence.Words;
+            this.cbxSection.SelectedItem = this.Sentence.Section.Name;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -46,6 +57,7 @@ namespace _700KanjiChuukyuu
                 this.txtAnswer.Text.Replace('、', ',').Split(',').ToList(),
                 this.txtMeaning.Text);
             this.Sentence.Id = id;
+            this.Sentence.Section = DataManager.Sections.SingleOrDefault(q => q.Name == (string)this.cbxSection.SelectedItem);
             DataManager.UpdateSentence(this.Sentence);
         }
     }

@@ -23,30 +23,37 @@ namespace CoreService
         #region ADD
         public static void AddSentence(Sentence s)
         {
-            s.Id = Sentences.Count;
+            s.Id = Sentences.Count + 1;
             Sentences.Add(s);
             FileManager.WriteSentenceFile();
         }
 
         public static void AddPhrase(Phrase p)
         {
-            p.Id = Phrases.Count;
+            p.Id = Phrases.Count + 1;
             Phrases.Add(p);
             FileManager.WritePhraseFile();
         }
 
         public static void AddWord(Word w)
         {
-            w.Id = WordList.Count;
+            w.Id = WordList.Count + 1;
             WordList.Add(w);
             FileManager.WriteWordFile();
         }
 
-        public static void AddSection(Section s)
+        public static string AddSection(Section s)
         {
-            s.Id = Sections.Count;
-            Sections.Add(s);
-            FileManager.WriteSectionFile();
+            if (Sections.SingleOrDefault(q => q.Name == s.Name) == null)
+            {
+                s.Id = Sections.Count + 1;
+                Sections.Add(s);
+                FileManager.WriteSectionFile();
+                return null;
+            } else
+            {
+                return "Đã có nhóm có tên này rồi!";
+            }
         }
         #endregion
 
@@ -162,19 +169,19 @@ namespace CoreService
             return temp.OrderBy(q => q.Trim()).ToList();
         }
 
-        public static List<string> SearchWordAndPhrase(string key)
+        public static List<string> SearchWordAndPhrase(string key, Section s)
         {
             List<string> temp = new List<string>();
             foreach (var item in WordList)
             {
-                if (item.Kanji.Contains(key) || item.HanViet.Contains(key))
+                if ((item.Kanji.Contains(key) || item.HanViet.Contains(key)) && (s == null || (item.Section != null && item.Section.Id == s.Id)))
                 {
                     temp.Add(item.Kanji);
                 }
             }
             foreach (var item in Phrases)
             {
-                if (item.Word.Contains(key))
+                if (item.Word.Contains(key) && (s == null || (item.Section != null && item.Section.Id == s.Id)))
                 {
                     temp.Add(item.Word);
                 }

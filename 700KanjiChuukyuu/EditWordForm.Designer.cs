@@ -38,6 +38,8 @@
             this.txtOnyomi = new System.Windows.Forms.TextBox();
             this.txtKunyomi = new System.Windows.Forms.TextBox();
             this.txtKanji = new System.Windows.Forms.TextBox();
+            this.cbxSection = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label4
@@ -94,7 +96,7 @@
             // 
             // btnDone
             // 
-            this.btnDone.Location = new System.Drawing.Point(257, 302);
+            this.btnDone.Location = new System.Drawing.Point(386, 302);
             this.btnDone.Name = "btnDone";
             this.btnDone.Size = new System.Drawing.Size(103, 36);
             this.btnDone.TabIndex = 19;
@@ -127,11 +129,30 @@
             this.txtKanji.Size = new System.Drawing.Size(589, 158);
             this.txtKanji.TabIndex = 16;
             // 
+            // cbxSection
+            // 
+            this.cbxSection.FormattingEnabled = true;
+            this.cbxSection.Location = new System.Drawing.Point(67, 311);
+            this.cbxSection.Name = "cbxSection";
+            this.cbxSection.Size = new System.Drawing.Size(228, 21);
+            this.cbxSection.TabIndex = 27;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(16, 314);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.TabIndex = 26;
+            this.label5.Text = "Nhóm";
+            // 
             // EditWordForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(627, 353);
+            this.Controls.Add(this.cbxSection);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -161,5 +182,7 @@
         private System.Windows.Forms.TextBox txtOnyomi;
         private System.Windows.Forms.TextBox txtKunyomi;
         private System.Windows.Forms.TextBox txtKanji;
+        private System.Windows.Forms.ComboBox cbxSection;
+        private System.Windows.Forms.Label label5;
     }
 }
