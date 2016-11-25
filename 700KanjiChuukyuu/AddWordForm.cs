@@ -22,11 +22,20 @@ namespace _700KanjiChuukyuu
 
         private void InitializeData()
         {
-
+            foreach (var item in DataManager.Sections)
+            {
+                this.cbxSection.Items.Add(item.Name);
+            }
         }
 
         private void btnDone_Click(object sender, EventArgs e)
         {
+            string r = ValidateInputs();
+            if (r != null)
+            {
+                MessageBox.Show(r);
+                return;
+            }
             string kanji = this.txtKanji.Text;
             if (DataManager.WordList.SingleOrDefault(q => q.Kanji == kanji) == null)
             {
@@ -35,6 +44,7 @@ namespace _700KanjiChuukyuu
                 List<string> onyomi = this.txtOnyomi.Text.Replace('、', ',').Split(',').ToList();
                 string meaning = this.txtMeaning.Text;
                 Word w = new Word(kanji, meaning, onyomi, kunyomi, hanviet);
+                w.Section = DataManager.Sections.SingleOrDefault(q => q.Name == (string)this.cbxSection.SelectedItem);
                 DataManager.AddWord(w);
                 Reset();
             } else
@@ -52,6 +62,19 @@ namespace _700KanjiChuukyuu
             this.txtMeaning.Text = "";
             this.txtOnyomi.Text = "";
             this.txtKanji.Focus();
+        }
+
+        private string ValidateInputs()
+        {
+            if (this.txtKanji.Text.Length != 1)
+            {
+                return "Chỉ được nhập một chữ cái!!";
+            }
+            if ((string)this.cbxSection.SelectedItem == "")
+            {
+                return "Hãy chọn một section";
+            }
+            return null;
         }
     }
 }
