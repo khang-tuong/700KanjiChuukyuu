@@ -7,17 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CoreService.Model;
 
 namespace _700KanjiChuukyuu.Controls
 {
-    public partial class CustomListBox : ListBox
+    public partial class CustomSelectBox : ComboBox
     {
-        public CustomListBox()
+        private string selectedText = "";
+        public CustomSelectBox()
         {
-            this.DrawMode = DrawMode.OwnerDrawFixed;
-            this.ItemHeight = 65;
             InitializeComponent();
+            this.DrawMode = DrawMode.OwnerDrawVariable;
+            this.DropDownStyle = ComboBoxStyle.DropDown;
+            this.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            this.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            this.ItemHeight = 30;
         }
 
         protected override void OnDrawItem(DrawItemEventArgs e)
@@ -54,19 +57,16 @@ namespace _700KanjiChuukyuu.Controls
             }
         }
 
-        protected override void OnMeasureItem(MeasureItemEventArgs e)
+        protected override void OnSelectedIndexChanged(EventArgs e)
         {
-            e.ItemHeight += 40;
+            this.selectedText +=  (string)this.SelectedItem + " ";
+            this.Text = this.selectedText;
+            MessageBox.Show("OnSelectedIndexChanged");
         }
 
-        public void AddWord(Word w)
+        protected override void OnTextChanged(EventArgs e)
         {
-            this.Items.Add(w);
-        }
-
-        public void AddPhrasse(Phrase p)
-        {
-            this.Items.Add(p);
+            MessageBox.Show("OnTextChanged");
         }
     }
 }

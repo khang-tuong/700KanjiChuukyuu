@@ -155,38 +155,32 @@ namespace CoreService
             return r;
         }
 
-        public static List<string> JoinWordAndPhrase()
+        public static List<object> JoinWordAndPhrase()
         {
-            List<string> temp = new List<string>();
-            foreach (var item in WordList)
-            {
-                temp.Add(item.Kanji);
-            }
-            foreach (var item in Phrases)
-            {
-                temp.Add(item.Word);
-            }
-            return temp.OrderBy(q => q.Trim()).ToList();
+            List<object> r = new List<object>();
+            r.AddRange(DataManager.WordList.OrderBy(q => q.Kanji));
+            r.AddRange(DataManager.Phrases.OrderBy(q => q.Word));
+            return r;
         }
 
-        public static List<string> SearchWordAndPhrase(string key, Section s)
+        public static List<object> SearchWordAndPhrase(string key, Section s)
         {
-            List<string> temp = new List<string>();
+            List<object> temp = new List<object>();
             foreach (var item in WordList)
             {
                 if ((item.Kanji.Contains(key) || item.HanViet.Contains(key)) && (s == null || (item.Section != null && item.Section.Id == s.Id)))
                 {
-                    temp.Add(item.Kanji);
+                    temp.Add(item);
                 }
             }
             foreach (var item in Phrases)
             {
                 if (item.Word.Contains(key) && (s == null || (item.Section != null && item.Section.Id == s.Id)))
                 {
-                    temp.Add(item.Word);
+                    temp.Add(item);
                 }
             }
-            return temp.OrderBy(q => q.Trim()).ToList();
+            return temp;
         }
 
         public static List<Phrase> GetPhrasesContainWord(Word w)

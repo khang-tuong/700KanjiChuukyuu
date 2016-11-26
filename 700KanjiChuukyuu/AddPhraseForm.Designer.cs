@@ -135,11 +135,11 @@
             // 
             // cbxSection
             // 
-            this.cbxSection.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxSection.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxSection.FormattingEnabled = true;
-            this.cbxSection.Location = new System.Drawing.Point(67, 352);
+            this.cbxSection.Location = new System.Drawing.Point(69, 342);
             this.cbxSection.Name = "cbxSection";
-            this.cbxSection.Size = new System.Drawing.Size(311, 28);
+            this.cbxSection.Size = new System.Drawing.Size(309, 33);
             this.cbxSection.TabIndex = 10;
             // 
             // AddPhraseForm

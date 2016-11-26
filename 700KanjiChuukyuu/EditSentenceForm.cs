@@ -22,6 +22,7 @@ namespace _700KanjiChuukyuu
             this.Sentence = s;
             InitializeSections();
             LoadData();
+            InitializeWords();
         }
 
         private void InitializeSections()
@@ -33,17 +34,26 @@ namespace _700KanjiChuukyuu
             }
         }
 
+        private void InitializeWords()
+        {
+            List<object> temp = DataManager.JoinWordAndPhrase();
+            this.cbxWords.Items.Clear();
+            foreach (var item in temp)
+            {
+                if (item is Word)
+                    this.cbxWords.Items.Add(((Word)item).Kanji);
+                else this.cbxWords.Items.Add(((Phrase)item).Word);
+            }
+        }
+
         private void LoadData()
         {
-            string answer = "";
-            string underlined = "";
-            for (int i = 0; i < this.Sentence.Answers.Count; i++)
+            string hightlight = "";
+            foreach (var item in this.Sentence.UnderlineWords)
             {
-                answer += this.Sentence.Answers[i] + ", ";
-                underlined += this.Sentence.UnderlineWords[i] + ", ";
+                hightlight += item + ", ";
             }
-            this.txtAnswer.Text = answer;
-            this.txtHighlight.Text = underlined;
+            this.txtHighlight.Text = hightlight;
             this.txtMeaning.Text = this.Sentence.Meaning;
             this.txtSentence.Text = this.Sentence.Words;
             this.cbxSection.SelectedItem = this.Sentence.Section.Name;
@@ -53,12 +63,16 @@ namespace _700KanjiChuukyuu
         {
             int id = this.Sentence.Id;
             this.Sentence = new Sentence(this.txtSentence.Text,
-                this.txtHighlight.Text.Replace('、', ',').Split(',').ToList(),
-                this.txtAnswer.Text.Replace('、', ',').Split(',').ToList(),
+                this.txtHighlight.Text.Split(',', ' ').ToList(),
                 this.txtMeaning.Text);
             this.Sentence.Id = id;
             this.Sentence.Section = DataManager.Sections.SingleOrDefault(q => q.Name == (string)this.cbxSection.SelectedItem);
             DataManager.UpdateSentence(this.Sentence);
+        }
+
+        private void cbxWords_KeyDown(object sender, KeyEventArgs e)
+        {
+            this.txtHighlight.AppendText((string)this.cbxSection.SelectedItem + ", ");
         }
     }
 }

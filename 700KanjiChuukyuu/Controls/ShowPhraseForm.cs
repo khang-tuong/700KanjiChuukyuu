@@ -41,17 +41,18 @@ namespace _700KanjiChuukyuu.Controls
             foreach (var item in sentences)
             {
                 TextBox txt = new TextBox();
-                txt.Text = item.Words;
+                txt.Text = item.Words + "\r\n" + item.Meaning;
                 txt.Location = new Point(this.lbOnyomi.Location.X, y);
                 txt.Width = this.Width - 62;
                 txt.WordWrap = true;
                 txt.Multiline = true;
-                txt.Font = new Font("Ms Mincho", 12);
+                txt.Font = new Font("Microsoft Sans Serif", 12);
                 txt.BorderStyle = BorderStyle.None;
                 txt.ReadOnly = true;
                 txt.BackColor = Color.White;
+                txt.Height = 50;
                 this.panelSentences.Controls.Add(txt);
-                y += txt.Height + 5;
+                y += txt.Height + 10;
             }
             this.panelSentences.Location = new Point(this.panelMean.Location.X, this.panelMean.Location.Y + this.panelMean.Height + 7);
         }

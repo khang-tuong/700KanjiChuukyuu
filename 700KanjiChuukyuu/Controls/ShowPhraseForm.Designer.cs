@@ -45,11 +45,13 @@
             // 
             // panelSentences
             // 
+            this.panelSentences.AutoSize = true;
+            this.panelSentences.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panelSentences.BackColor = System.Drawing.Color.White;
             this.panelSentences.Controls.Add(this.lbExSentences);
             this.panelSentences.Location = new System.Drawing.Point(3, 377);
             this.panelSentences.Name = "panelSentences";
-            this.panelSentences.Size = new System.Drawing.Size(643, 91);
+            this.panelSentences.Size = new System.Drawing.Size(127, 40);
             this.panelSentences.TabIndex = 37;
             // 
             // lbExSentences
@@ -92,7 +94,7 @@
             // 
             this.txtMeaning.BackColor = System.Drawing.Color.White;
             this.txtMeaning.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMeaning.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMeaning.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMeaning.Location = new System.Drawing.Point(35, 57);
             this.txtMeaning.Multiline = true;
             this.txtMeaning.Name = "txtMeaning";
@@ -133,9 +135,9 @@
             this.lbOnyomi.Location = new System.Drawing.Point(31, 57);
             this.lbOnyomi.Name = "lbOnyomi";
             this.lbOnyomi.Padding = new System.Windows.Forms.Padding(5);
-            this.lbOnyomi.Size = new System.Drawing.Size(69, 29);
+            this.lbOnyomi.Size = new System.Drawing.Size(79, 29);
             this.lbOnyomi.TabIndex = 21;
-            this.lbOnyomi.Text = "Âm Hán";
+            this.lbOnyomi.Text = "Cách đọc";
             // 
             // txtOnyomi
             // 
@@ -163,12 +165,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Controls.Add(this.panelSentences);
             this.Controls.Add(this.panelMean);
             this.Controls.Add(this.panelSpell);
             this.Controls.Add(this.txtKanji);
             this.Name = "ShowPhraseForm";
-            this.Size = new System.Drawing.Size(661, 474);
+            this.Size = new System.Drawing.Size(649, 420);
             this.panelSentences.ResumeLayout(false);
             this.panelSentences.PerformLayout();
             this.panelMean.ResumeLayout(false);

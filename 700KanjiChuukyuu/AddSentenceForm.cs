@@ -18,6 +18,7 @@ namespace _700KanjiChuukyuu
         {
             InitializeComponent();
             InitializeSections();
+            InitializeWords();
         }
 
         private void InitializeSections()
@@ -29,14 +30,44 @@ namespace _700KanjiChuukyuu
             }
         }
 
+        private void InitializeWords()
+        {
+            this.cbxWords.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            this.cbxWords.MaxDropDownItems = 5;
+            List<object> temp = DataManager.JoinWordAndPhrase();
+            this.cbxWords.Items.Clear();
+            foreach (var item in temp)
+            {
+                if (item is Word)
+                    this.cbxWords.Items.Add(((Word)item).Kanji);
+                else this.cbxWords.Items.Add(((Phrase)item).Word);
+            }
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             Sentence s = new Sentence(this.txtSentence.Text, 
-                this.txtHighlight.Text.Replace('、', ',').Split(',').ToList(), 
-                this.txtAnswer.Text.Replace('、', ',').Split(',').ToList(),
+                this.txtHighlight.Text.Split(',', ' ').ToList(), 
                 this.txtMeaning.Text);
             s.Section = DataManager.Sections.SingleOrDefault(q => q.Name == (string)this.cbxSection.SelectedItem);
             DataManager.AddSentence(s);
+            Reset();
+        }
+
+        private void cbxWords_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.txtHighlight.AppendText((string)this.cbxWords.SelectedText + ", ");
+            }
+        }
+
+        private void Reset()
+        {
+            this.txtHighlight.Text = "";
+            this.txtMeaning.Text = "";
+            this.txtSentence.Text = "";
+            this.txtSentence.Focus();
         }
     }
 }

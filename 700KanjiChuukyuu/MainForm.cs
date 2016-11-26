@@ -47,22 +47,19 @@ namespace _700KanjiChuukyuu
             {
                 MessageBox.Show(r, "Có lỗi xảy ra");
             }
-            List<string> temp = DataManager.JoinWordAndPhrase();
+            List<object> temp = DataManager.JoinWordAndPhrase();
             ReloadListBox(temp);
             ReLoadComboBox();
         }
 
-        private void ReloadListBox(List<string> data)
+        private void ReloadListBox(List<object> data)
         {
             this.listWord2.Items.Clear();
-            //foreach (var item in data)
-            //{
-            //    this.listWord2.ItemHeight = 30;
-            //    this.listWord2.Items.Add(item);
-            //}
-            foreach (var item in DataManager.Phrases)
+            foreach (var item in data)
             {
-                this.listWord2.AddPhrasse(item);
+                if (item is Word)
+                    this.listWord2.AddWord((Word)item);
+                else this.listWord2.AddPhrasse((Phrase)item);
             }
         }
 
@@ -119,14 +116,14 @@ namespace _700KanjiChuukyuu
 
         private void menuEditWord_Click(object sender, EventArgs e)
         {
-            string text = (string) this.listWord2.SelectedItem;
-            if (text.Length > 1)
+            object obj = this.listWord2.SelectedItem;
+            if (obj is Phrase)
             {
-                EditPhraseForm f = new EditPhraseForm(DataManager.Phrases.SingleOrDefault(q => q.Word == text));
+                EditPhraseForm f = new EditPhraseForm(DataManager.Phrases.SingleOrDefault(q => q.Id == ((Phrase)obj).Id));
                 f.Show();
             } else
             {
-                EditWordForm f = new EditWordForm(DataManager.WordList.SingleOrDefault(q => q.Kanji == text));
+                EditWordForm f = new EditWordForm(DataManager.WordList.SingleOrDefault(q => q.Id == ((Word)obj).Id));
                 f.Show();
             }
         }
@@ -141,8 +138,8 @@ namespace _700KanjiChuukyuu
         {
             string name = (string)this.cbxSection.SelectedItem;
             Section s = DataManager.Sections.SingleOrDefault(q => q.Name == name);
-            List<string> data = DataManager.SearchWordAndPhrase(this.txtSearch.Text, s);
-            this.ReloadListBox(data);
+            List<object> obj = DataManager.SearchWordAndPhrase(this.txtSearch.Text, s);
+            this.ReloadListBox(obj);
         }
 
         private void menuRefresh_Click(object sender, EventArgs e)
