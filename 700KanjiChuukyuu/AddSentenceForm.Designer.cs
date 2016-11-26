@@ -74,7 +74,7 @@
             this.txtHighlight.Location = new System.Drawing.Point(214, 122);
             this.txtHighlight.Name = "txtHighlight";
             this.txtHighlight.Size = new System.Drawing.Size(521, 29);
-            this.txtHighlight.TabIndex = 3;
+            this.txtHighlight.TabIndex = 2;
             // 
             // button1
             // 
@@ -82,7 +82,7 @@
             this.button1.Location = new System.Drawing.Point(308, 334);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(115, 36);
-            this.button1.TabIndex = 6;
+            this.button1.TabIndex = 5;
             this.button1.Text = "Hoàn tất";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -93,7 +93,7 @@
             this.txtMeaning.Location = new System.Drawing.Point(12, 197);
             this.txtMeaning.Name = "txtMeaning";
             this.txtMeaning.Size = new System.Drawing.Size(723, 29);
-            this.txtMeaning.TabIndex = 8;
+            this.txtMeaning.TabIndex = 3;
             // 
             // label4
             // 
@@ -112,7 +112,7 @@
             this.cbxSection.Location = new System.Drawing.Point(17, 281);
             this.cbxSection.Name = "cbxSection";
             this.cbxSection.Size = new System.Drawing.Size(718, 28);
-            this.cbxSection.TabIndex = 12;
+            this.cbxSection.TabIndex = 4;
             // 
             // label5
             // 
@@ -132,7 +132,7 @@
             this.cbxWords.Location = new System.Drawing.Point(19, 122);
             this.cbxWords.Name = "cbxWords";
             this.cbxWords.Size = new System.Drawing.Size(189, 28);
-            this.cbxWords.TabIndex = 13;
+            this.cbxWords.TabIndex = 1;
             this.cbxWords.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbxWords_KeyDown);
             // 
             // AddSentenceForm

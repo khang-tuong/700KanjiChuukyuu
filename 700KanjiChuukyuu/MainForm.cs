@@ -74,6 +74,19 @@ namespace _700KanjiChuukyuu
             }
         }
 
+        public void SearchPhrase(string text)
+        {
+            Phrase p = DataManager.Phrases.SingleOrDefault(q => q.Word == text);
+            if (p != null)
+            {
+                ShowPhraseForm f = new ShowPhraseForm(p);
+                f.MainForm = this;
+                f.Location = new Point(15, 0);
+                this.panelDetail.Controls.Clear();
+                this.panelDetail.Controls.Add(f);
+            }
+        }
+
         private void menuAdd_Click(object sender, EventArgs e)
         {
             AddWordForm f = new AddWordForm();
@@ -90,6 +103,7 @@ namespace _700KanjiChuukyuu
                 if (p != null)
                 {
                     ShowPhraseForm f = new ShowPhraseForm(p);
+                    f.MainForm = this;
                     f.Location = new Point(15, 0);
                     this.panelDetail.Controls.Clear();
                     this.panelDetail.Controls.Add(f);
@@ -172,6 +186,26 @@ namespace _700KanjiChuukyuu
         private void cbxSection_SelectedIndexChanged(object sender, EventArgs e)
         {
             txtSearch_TextChanged(sender, e);
+        }
+
+        private void menuDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult r = MessageBox.Show("Bạn có chắc là muốn xóa từ này không?", "Xác nhận xóa", MessageBoxButtons.YesNo);
+            if (r == DialogResult.Yes)
+            {
+                object obj = this.listWord2.SelectedItem;
+                if (obj is Phrase)
+                {
+                    Phrase p = DataManager.Phrases.SingleOrDefault(q => q.Id == ((Phrase)obj).Id);
+                    DataManager.DeletePhrase(p);
+                }
+                else
+                {
+                    Word w = DataManager.WordList.SingleOrDefault(q => q.Id == ((Word)obj).Id);
+                    DataManager.DeleteWord(w);
+                }
+
+            }
         }
     }
 }

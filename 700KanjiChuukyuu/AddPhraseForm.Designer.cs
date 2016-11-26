@@ -107,7 +107,7 @@
             this.button1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(136, 32);
-            this.button1.TabIndex = 6;
+            this.button1.TabIndex = 4;
             this.button1.Text = "Hoàn tất";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -140,7 +140,7 @@
             this.cbxSection.Location = new System.Drawing.Point(69, 342);
             this.cbxSection.Name = "cbxSection";
             this.cbxSection.Size = new System.Drawing.Size(309, 33);
-            this.cbxSection.TabIndex = 10;
+            this.cbxSection.TabIndex = 3;
             // 
             // AddPhraseForm
             // 

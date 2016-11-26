@@ -45,6 +45,7 @@
             // 
             // panelSentences
             // 
+            this.panelSentences.AutoScroll = true;
             this.panelSentences.AutoSize = true;
             this.panelSentences.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panelSentences.BackColor = System.Drawing.Color.White;

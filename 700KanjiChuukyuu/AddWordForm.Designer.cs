@@ -71,7 +71,7 @@
             this.btnDone.Location = new System.Drawing.Point(388, 302);
             this.btnDone.Name = "btnDone";
             this.btnDone.Size = new System.Drawing.Size(103, 36);
-            this.btnDone.TabIndex = 5;
+            this.btnDone.TabIndex = 6;
             this.btnDone.Text = "Hoàn tất";
             this.btnDone.UseVisualStyleBackColor = true;
             this.btnDone.Click += new System.EventHandler(this.btnDone_Click);
@@ -97,18 +97,18 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(38, 199);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 13);
+            this.label1.Size = new System.Drawing.Size(39, 13);
             this.label1.TabIndex = 12;
-            this.label1.Text = "Âm Hán";
+            this.label1.Text = "Âm On";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(361, 199);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 13);
+            this.label2.Size = new System.Drawing.Size(44, 13);
             this.label2.TabIndex = 13;
-            this.label2.Text = "Âm Nhật";
+            this.label2.Text = "Âm Kun";
             // 
             // label3
             // 
@@ -139,11 +139,12 @@
             // 
             // cbxSection
             // 
+            this.cbxSection.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxSection.FormattingEnabled = true;
             this.cbxSection.Location = new System.Drawing.Point(89, 299);
             this.cbxSection.Name = "cbxSection";
-            this.cbxSection.Size = new System.Drawing.Size(228, 21);
-            this.cbxSection.TabIndex = 18;
+            this.cbxSection.Size = new System.Drawing.Size(228, 32);
+            this.cbxSection.TabIndex = 5;
             // 
             // AddWordForm
             // 
