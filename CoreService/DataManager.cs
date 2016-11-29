@@ -148,12 +148,28 @@ namespace CoreService
 
         #endregion
 
-
+        #region GET
         public static List<Sentence> GetSentencesContainPhrase(Phrase p)
         {
             var r = Sentences.Where(q => q.UnderlineWords.Contains(p.Word)).ToList();
             return r;
         }
+
+        public static List<object> GetWordPhraseInSection(string sectionName)
+        {
+            List<object> obj = new List<object>();
+            obj.AddRange(WordList.Where(q => q.Section.Name == sectionName).ToList());
+            obj.AddRange(Phrases.Where(q => q.Section.Name == sectionName).ToList());
+            return obj;
+        }
+
+        public static List<Phrase> GetPhraseInSection(string sectionName)
+        {
+            List<Phrase> phrases = new List<Phrase>();
+            phrases.AddRange(Phrases.Where(q => q.Section.Name == sectionName).Take(5).ToList());
+            return phrases;
+        }
+        #endregion
 
         public static List<object> JoinWordAndPhrase()
         {

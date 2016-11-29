@@ -207,5 +207,11 @@ namespace _700KanjiChuukyuu
 
             }
         }
+
+        private void menuWordTest_Click(object sender, EventArgs e)
+        {
+            TestKanjiForm f = new TestKanjiForm();
+            f.Show();
+        }
     }
 }

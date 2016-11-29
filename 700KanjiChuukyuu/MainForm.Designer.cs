@@ -31,8 +31,14 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menu = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuEditWord = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuAdd = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuAddPhrase = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuAddSentence = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuAddSection = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.menuEditWord = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.menuDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.modeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.traTừToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.choTừNgẫuNhiênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,13 +48,8 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.panelDetail = new System.Windows.Forms.Panel();
             this.cbxSection = new System.Windows.Forms.ComboBox();
-            this.menuAdd = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuAddPhrase = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuAddSentence = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuAddSection = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuDelete = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.listWord2 = new _700KanjiChuukyuu.Controls.CustomListBox();
+            this.menuWordTest = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,21 +85,61 @@
             this.menuAddSentence,
             this.menuAddSection});
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(152, 22);
+            this.menu.Size = new System.Drawing.Size(105, 22);
             this.menu.Text = "Thêm";
             this.menu.Click += new System.EventHandler(this.menuAdd_Click);
             // 
-            // menuEditWord
+            // menuAdd
             // 
-            this.menuEditWord.Name = "menuEditWord";
-            this.menuEditWord.Size = new System.Drawing.Size(152, 22);
-            this.menuEditWord.Text = "Sửa";
-            this.menuEditWord.Click += new System.EventHandler(this.menuEditWord_Click);
+            this.menuAdd.Name = "menuAdd";
+            this.menuAdd.Size = new System.Drawing.Size(108, 22);
+            this.menuAdd.Text = "Kanji";
+            this.menuAdd.Click += new System.EventHandler(this.menuAdd_Click);
+            // 
+            // menuAddPhrase
+            // 
+            this.menuAddPhrase.Name = "menuAddPhrase";
+            this.menuAddPhrase.Size = new System.Drawing.Size(108, 22);
+            this.menuAddPhrase.Text = "Từ";
+            this.menuAddPhrase.Click += new System.EventHandler(this.menuAddPhrase_Click);
+            // 
+            // menuAddSentence
+            // 
+            this.menuAddSentence.Name = "menuAddSentence";
+            this.menuAddSentence.Size = new System.Drawing.Size(108, 22);
+            this.menuAddSentence.Text = "Câu";
+            this.menuAddSentence.Click += new System.EventHandler(this.menuAddSentence_Click);
+            // 
+            // menuAddSection
+            // 
+            this.menuAddSection.Name = "menuAddSection";
+            this.menuAddSection.Size = new System.Drawing.Size(108, 22);
+            this.menuAddSection.Text = "Nhóm";
+            this.menuAddSection.Click += new System.EventHandler(this.menuAddSection_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(102, 6);
+            // 
+            // menuEditWord
+            // 
+            this.menuEditWord.Name = "menuEditWord";
+            this.menuEditWord.Size = new System.Drawing.Size(105, 22);
+            this.menuEditWord.Text = "Sửa";
+            this.menuEditWord.Click += new System.EventHandler(this.menuEditWord_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(102, 6);
+            // 
+            // menuDelete
+            // 
+            this.menuDelete.Name = "menuDelete";
+            this.menuDelete.Size = new System.Drawing.Size(105, 22);
+            this.menuDelete.Text = "Xóa";
+            this.menuDelete.Click += new System.EventHandler(this.menuDelete_Click);
             // 
             // modeToolStripMenuItem
             // 
@@ -139,6 +180,8 @@
             // 
             // menuPlayGame
             // 
+            this.menuPlayGame.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuWordTest});
             this.menuPlayGame.Name = "menuPlayGame";
             this.menuPlayGame.Size = new System.Drawing.Size(158, 22);
             this.menuPlayGame.Text = "Chơi game nào!";
@@ -173,46 +216,6 @@
             this.cbxSection.TabIndex = 7;
             this.cbxSection.SelectedIndexChanged += new System.EventHandler(this.cbxSection_SelectedIndexChanged);
             // 
-            // menuAdd
-            // 
-            this.menuAdd.Name = "menuAdd";
-            this.menuAdd.Size = new System.Drawing.Size(152, 22);
-            this.menuAdd.Text = "Kanji";
-            this.menuAdd.Click += new System.EventHandler(this.menuAdd_Click);
-            // 
-            // menuAddPhrase
-            // 
-            this.menuAddPhrase.Name = "menuAddPhrase";
-            this.menuAddPhrase.Size = new System.Drawing.Size(152, 22);
-            this.menuAddPhrase.Text = "Từ";
-            this.menuAddPhrase.Click += new System.EventHandler(this.menuAddPhrase_Click);
-            // 
-            // menuAddSentence
-            // 
-            this.menuAddSentence.Name = "menuAddSentence";
-            this.menuAddSentence.Size = new System.Drawing.Size(152, 22);
-            this.menuAddSentence.Text = "Câu";
-            this.menuAddSentence.Click += new System.EventHandler(this.menuAddSentence_Click);
-            // 
-            // menuAddSection
-            // 
-            this.menuAddSection.Name = "menuAddSection";
-            this.menuAddSection.Size = new System.Drawing.Size(152, 22);
-            this.menuAddSection.Text = "Nhóm";
-            this.menuAddSection.Click += new System.EventHandler(this.menuAddSection_Click);
-            // 
-            // menuDelete
-            // 
-            this.menuDelete.Name = "menuDelete";
-            this.menuDelete.Size = new System.Drawing.Size(152, 22);
-            this.menuDelete.Text = "Xóa";
-            this.menuDelete.Click += new System.EventHandler(this.menuDelete_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
-            // 
             // listWord2
             // 
             this.listWord2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
@@ -223,6 +226,13 @@
             this.listWord2.Size = new System.Drawing.Size(258, 459);
             this.listWord2.TabIndex = 8;
             this.listWord2.Click += new System.EventHandler(this.listWord_Click);
+            // 
+            // menuWordTest
+            // 
+            this.menuWordTest.Name = "menuWordTest";
+            this.menuWordTest.Size = new System.Drawing.Size(162, 22);
+            this.menuWordTest.Text = "Kiểm tra từ vựng";
+            this.menuWordTest.Click += new System.EventHandler(this.menuWordTest_Click);
             // 
             // MainForm
             // 
@@ -267,6 +277,7 @@
         private System.Windows.Forms.ToolStripMenuItem menuAddSection;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem menuDelete;
+        private System.Windows.Forms.ToolStripMenuItem menuWordTest;
     }
 }
 

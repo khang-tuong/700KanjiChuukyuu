@@ -87,11 +87,29 @@
     <Compile Include="Controls\ShowPhraseForm.Designer.cs">
       <DependentUpon>ShowPhraseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\ShowResultKanjiPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ShowResultKanjiPanel.Designer.cs">
+      <DependentUpon>ShowResultKanjiPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ShowResultTestKanji.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\ShowResultTestKanji.Designer.cs">
+      <DependentUpon>ShowResultTestKanji.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ShowWordForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controls\ShowWordForm.Designer.cs">
       <DependentUpon>ShowWordForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TestKanjiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\TestKanjiForm.Designer.cs">
+      <DependentUpon>TestKanjiForm.cs</DependentUpon>
     </Compile>
     <Compile Include="EditPhraseForm.cs">
       <SubType>Form</SubType>
@@ -137,8 +155,17 @@
     <EmbeddedResource Include="Controls\ShowPhraseForm.resx">
       <DependentUpon>ShowPhraseForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ShowResultKanjiPanel.resx">
+      <DependentUpon>ShowResultKanjiPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ShowResultTestKanji.resx">
+      <DependentUpon>ShowResultTestKanji.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\ShowWordForm.resx">
       <DependentUpon>ShowWordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TestKanjiForm.resx">
+      <DependentUpon>TestKanjiForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditPhraseForm.resx">
       <DependentUpon>EditPhraseForm.cs</DependentUpon>
